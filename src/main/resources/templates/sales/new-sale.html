@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+    <title>New Sale - MobiStock</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <h1 class="h3 mb-3 text-gray-800">New Sale</h1>
+        <div class="row">
+            <!-- Left Column: Scan and Cart -->
+            <div class="col-lg-8">
+                <div class="card shadow mb-4">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <div class="d-flex gap-3 align-items-stretch">
+                                <div class="position-relative flex-grow-1">
+                                    <input type="text" id="scanInput" class="form-control form-control-lg ps-5" placeholder="Scan barcode or IMEI..." autofocus>
+                                    <i class="bi bi-upc-scan position-absolute top-50 start-0 translate-middle-y ms-3 text-muted fs-5"></i>
+                                </div>
+                                <button class="btn btn-primary btn-lg px-4 d-inline-flex align-items-center gap-2 shadow-sm text-nowrap" type="button" id="btnAddItem">
+                                    <i class="bi bi-plus-circle"></i> Add Item
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Search Results Area -->
+                        <div id="searchResults" class="mb-3"></div>
+
+                        <!-- Cart Table -->
+                        <h5 class="mb-3">Cart Items</h5>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover align-middle mb-0" id="cartTable">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Item Details</th>
+                                        <th class="text-end" style="width: 110px;">Price</th>
+                                        <th class="text-center" style="width: 70px;">Qty</th>
+                                        <th class="text-end" style="width: 120px;">Subtotal</th>
+                                        <th class="text-center" style="width: 60px;">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Cart items rendered by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Summary -->
+            <div class="col-lg-4">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3 bg-light">
+                        <h6 class="m-0 font-weight-bold text-primary">Sale Summary</h6>
+                    </div>
+                    <div class="card-body">
+                        <form id="saleForm">
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold text-muted mb-1">Customer Name</label>
+                                <input type="text" class="form-control" id="customerName" name="customerName" placeholder="Walk-in Customer">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold text-muted mb-1">Customer Phone</label>
+                                <input type="text" class="form-control" id="customerPhone" name="customerPhone" placeholder="0300-1234567">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold text-muted mb-1">Receipt Notes</label>
+                                <textarea class="form-control" id="saleNotes" name="notes" rows="2" placeholder="Thank you for shopping with us!"></textarea>
+                            </div>
+                            <hr class="my-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="h6 mb-0 text-muted">Total Items:</span>
+                                <span class="h6 mb-0 fw-bold" id="cartItemCount">0</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="h5 mb-0 fw-bold">Total Amount:</span>
+                                <span class="h5 mb-0 text-primary fw-bold" id="cartTotalAmount">PKR 0.00</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-4">
+                                <span class="small text-muted">Estimated Profit:</span>
+                                <span class="small text-success fw-bold" id="cartTotalProfit">PKR 0.00</span>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="button" class="btn btn-success btn-lg fw-bold" id="btnCompleteSale">Complete Sale</button>
+                                <button type="button" class="btn btn-outline-danger btn-sm" id="btnClearCart">Clear Cart</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div layout:fragment="scripts">
+        <script src="/js/scanner.js?v=4"></script>
+        <script>
+            // TODO: Implement scanner AJAX calls to /api/lookup/{code}
+            // TODO: Implement cart management and Complete Sale POST logic
+        </script>
+    </div>
+</body>
+</html>

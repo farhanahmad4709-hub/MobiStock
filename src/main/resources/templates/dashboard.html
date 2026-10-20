@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+    <title>Dashboard - MobiStock</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <!-- Row 1: Modern Elevated Stat Cards -->
+        <div class="row g-3 mb-4">
+            <!-- Stat 1: Stock -->
+            <div class="col-xl-3 col-md-6">
+                <div class="card border-left-primary shadow-sm h-100 card-hover">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="small fw-bold text-primary text-uppercase">Phones in Stock</span>
+                            <div class="p-2 bg-primary bg-opacity-10 rounded-circle text-primary">
+                                <i class="bi bi-phone fs-5"></i>
+                            </div>
+                        </div>
+                        <div class="h4 mb-0 fw-bold text-dark d-flex align-items-center">
+                            <span class="masked-val">**********</span>
+                            <span class="real-val d-none" th:text="${phonesInStock}">0</span>
+                            <button type="button" class="btn btn-sm btn-link text-muted p-0 ms-2 mask-toggle-btn" title="Show data" style="font-size: 1.1rem; line-height: 1; border: none; background: none;">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>
+                        <small class="text-muted">Available inventory</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stat 2: Today's Sales -->
+            <div class="col-xl-3 col-md-6">
+                <div class="card border-left-info shadow-sm h-100 card-hover">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="small fw-bold text-info text-uppercase">Today's Sales</span>
+                            <div class="p-2 bg-info bg-opacity-10 rounded-circle text-info">
+                                <i class="bi bi-cart-check fs-5"></i>
+                            </div>
+                        </div>
+                        <div class="h4 mb-0 fw-bold text-dark d-flex align-items-center">
+                            <span class="masked-val">**********</span>
+                            <span class="real-val d-none" th:text="${'PKR ' + (todaySales != null ? #numbers.formatDecimal(todaySales, 1, 'COMMA', 2, 'POINT') : '0.00')}">PKR 0.00</span>
+                            <button type="button" class="btn btn-sm btn-link text-muted p-0 ms-2 mask-toggle-btn" title="Show data" style="font-size: 1.1rem; line-height: 1; border: none; background: none;">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>
+                        <small class="text-muted">Today's gross revenue</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stat 3: Today's Profit -->
+            <div class="col-xl-3 col-md-6">
+                <div class="card border-left-success shadow-sm h-100 card-hover">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="small fw-bold text-success text-uppercase">Today's Profit</span>
+                            <div class="p-2 bg-success bg-opacity-10 rounded-circle text-success">
+                                <i class="bi bi-graph-up-arrow fs-5"></i>
+                            </div>
+                        </div>
+                        <div class="h4 mb-0 fw-bold text-dark d-flex align-items-center">
+                            <span class="masked-val">**********</span>
+                            <span class="real-val d-none text-success" th:text="${'PKR ' + (todayProfit != null ? #numbers.formatDecimal(todayProfit, 1, 'COMMA', 2, 'POINT') : '0.00')}">PKR 0.00</span>
+                            <button type="button" class="btn btn-sm btn-link text-muted p-0 ms-2 mask-toggle-btn" title="Show data" style="font-size: 1.1rem; line-height: 1; border: none; background: none;">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>
+                        <small class="text-muted">Net profit after phone cost</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stat 4: Cloud & Local Backup Health -->
+            <div class="col-xl-3 col-md-6">
+                <div class="card border-left-warning shadow-sm h-100 card-hover">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="small fw-bold text-warning text-uppercase">Data Protection</span>
+                            <div class="p-2 bg-warning bg-opacity-10 rounded-circle text-warning">
+                                <i class="bi bi-shield-check fs-5"></i>
+                            </div>
+                        </div>
+                        <div class="h5 mb-1 fw-bold text-dark d-flex align-items-center">
+                            <span class="badge badge-soft-success">Active & Protected</span>
+                        </div>
+                        <small class="text-muted">
+                            <a href="/backup" class="text-decoration-none text-muted">Manage Drive & Backups &rarr;</a>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2: Recent Sales Card with Modern Table -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                <h6 class="m-0 fw-bold text-primary"><i class="bi bi-clock-history me-1"></i> Recent Transactions</h6>
+                <a href="/sales" class="btn btn-sm btn-outline-primary">View All History</a>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th>Invoice #</th>
+                                <th>Items</th>
+                                <th>Total Amount</th>
+                                <th>Sold By</th>
+                                <th>Time</th>
+                                <th class="text-end">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="sale : ${recentSales}">
+                                <td>
+                                    <a th:href="@{/sales/{id}(id=${sale.id})}" class="fw-bold text-decoration-none" th:text="${sale.invoiceNumber}">INV-001</a>
+                                </td>
+                                <td>
+                                    <span class="badge badge-soft-primary" th:text="${sale.items.size() + ' item(s)'}">1 item</span>
+                                </td>
+                                <td class="fw-bold text-dark" th:text="${'PKR ' + (sale.totalAmount != null ? #numbers.formatDecimal(sale.totalAmount, 1, 'COMMA', 2, 'POINT') : '0.00')}">PKR 0.00</td>
+                                <td th:text="${sale.soldBy != null ? sale.soldBy.fullName : 'System'}">User</td>
+                                <td class="text-muted small" th:text="${#temporals.format(sale.createdAt, 'HH:mm')}">12:00</td>
+                                <td class="text-end">
+                                    <a th:href="@{/sales/{id}(id=${sale.id})}" class="btn btn-sm btn-light border" title="View Sale">
+                                        <i class="bi bi-eye text-primary"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr th:if="${#lists.isEmpty(recentSales)}">
+                                <td colspan="6" class="text-center py-4 text-muted">
+                                    No sales transactions yet today.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3: Quick Action Buttons -->
+        <div class="d-flex flex-wrap gap-2 mb-4">
+            <a href="/sales/new" class="btn btn-primary shadow-sm"><i class="bi bi-cart-plus me-1"></i> New Sale</a>
+            <a href="/phones/add" class="btn btn-success shadow-sm"><i class="bi bi-plus-circle me-1"></i> Add Phone</a>
+            <a href="/backup" class="btn btn-outline-secondary shadow-sm"><i class="bi bi-cloud-arrow-up me-1"></i> Backup & Cloud Recovery</a>
+        </div>
+    </div>
+</body>
+</html>

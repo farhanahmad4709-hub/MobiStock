@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: html}">
+<body>
+<div th:fragment="content">
+    <h2 class="mb-4">Audit Log</h2>
+
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>Timestamp</th>
+            <th>User</th>
+            <th>Action</th>
+            <th>Entity Type</th>
+            <th>Entity ID</th>
+            <th>Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="log : ${logs}">
+            <td th:text="${#temporals.format(log.createdAt, 'yyyy-MM-dd HH:mm:ss')}"></td>
+            <td th:text="${log.user != null ? log.user.username : 'System'}"></td>
+            <td th:text="${log.action}"></td>
+            <td th:text="${log.entityType}"></td>
+            <td th:text="${log.entityId}"></td>
+            <td>
+                <div th:if="${log.oldValues != null}"><strong>Old:</strong> <span th:text="${log.oldValues}"></span></div>
+                <div th:if="${log.newValues != null}"><strong>New:</strong> <span th:text="${log.newValues}"></span></div>
+            </td>
+        </tr>
+        <tr th:if="${#lists.isEmpty(logs)}">
+            <td colspan="6" class="text-center">No audit logs found.</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

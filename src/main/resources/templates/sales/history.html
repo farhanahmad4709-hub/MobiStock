@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+    <title>Sales History - MobiStock</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Sales History</h1>
+            <div class="d-flex gap-2">
+                <a th:href="@{/sales/export(fromDate=${fromDate}, toDate=${toDate}, q=${searchQuery})}" class="btn btn-outline-success" title="Download standard CSV"><i class="bi bi-file-earmark-spreadsheet me-1"></i> Export CSV</a>
+                <a th:href="@{/sales/export-excel(fromDate=${fromDate}, toDate=${toDate}, q=${searchQuery})}" class="btn btn-success" title="Download formatted Excel workbook"><i class="bi bi-file-earmark-excel-fill me-1"></i> Export Excel</a>
+            </div>
+        </div>
+        
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <form method="get" th:action="@{/sales}">
+                    <!-- Row 1: Search Field (Full Width & Highlighted) -->
+                    <div class="mb-2">
+                        <div class="position-relative">
+                            <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+                            <input type="text" class="form-control form-control-highlight ps-5" name="q" placeholder="Search item, customer, invoice..." th:value="${searchQuery}">
+                        </div>
+                    </div>
+                    <!-- Row 2: Date Filters, Filter Button & Reset Button -->
+                    <div class="d-flex flex-wrap align-items-center gap-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <label class="fw-bold small text-muted mb-0">From:</label>
+                            <input type="date" class="form-control form-control-highlight" style="width: 175px;" name="fromDate" th:value="${fromDate}">
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <label class="fw-bold small text-muted mb-0">To:</label>
+                            <input type="date" class="form-control form-control-highlight" style="width: 175px;" name="toDate" th:value="${toDate}">
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <button type="submit" class="btn btn-primary px-3 text-nowrap shadow-sm"><i class="bi bi-funnel me-1"></i> Filter</button>
+                            <a th:href="@{/sales}" class="btn btn-outline-secondary text-nowrap" title="Reset filter"><i class="bi bi-arrow-clockwise me-1"></i> Reset</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover datatable-paginated align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Invoice #</th>
+                                <th>Date/Time</th>
+                                <th>Customer</th>
+                                <th>Items</th>
+                                <th class="text-end">Total Amount</th>
+                                <th class="text-end">Profit</th>
+                                <th>Sold By</th>
+                                <th class="text-center text-nowrap" style="min-width: 90px; width: 90px;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="sale : ${sales}">
+                                <td>
+                                    <a th:href="@{/sales/{id}(id=${sale.id})}" class="fw-bold font-monospace text-primary text-decoration-none" th:text="${sale.invoiceNumber}">INV-001</a>
+                                </td>
+                                <td th:text="${#temporals.format(sale.createdAt, 'dd MMM yyyy, HH:mm')}">Date Time</td>
+                                <td>
+                                    <span th:text="${sale.customerName != null and !sale.customerName.isEmpty() and sale.customerName != 'NaN' ? sale.customerName : 'Walk-in Customer'}" 
+                                          th:classappend="${sale.customerName == null or sale.customerName.isEmpty() or sale.customerName == 'NaN' ? 'text-muted fst-italic' : 'text-dark fw-semibold'}">Customer</span>
+                                </td>
+                                <td>
+                                    <span th:each="item, iterStat : ${sale.items}">
+                                        <span class="fw-semibold text-dark" th:text="${item.itemName}"></span>
+                                        <span th:if="${!iterStat.last}">, </span>
+                                    </span>
+                                </td>
+                                <td th:text="${'PKR ' + #numbers.formatDecimal(sale.totalAmount, 1, 'COMMA', 2, 'POINT')}" class="text-end fw-bold text-dark font-monospace">PKR 0.00</td>
+                                <td th:text="${'PKR ' + #numbers.formatDecimal(sale.totalProfit, 1, 'COMMA', 2, 'POINT')}" class="text-end text-success fw-bold font-monospace">PKR 0.00</td>
+                                <td th:text="${sale.soldBy != null ? sale.soldBy.fullName : 'System'}">User</td>
+                                <td class="text-center text-nowrap align-middle" style="min-width: 90px;">
+                                    <div class="btn-group btn-group-sm">
+                                        <a th:href="@{/sales/{id}(id=${sale.id})}" class="btn btn-outline-primary" title="View Details / Receipt"><i class="bi bi-eye"></i></a>
+                                        <form th:action="@{/sales/delete/{id}(id=${sale.id})}" method="post" class="d-inline">
+                                            <button type="submit" class="btn btn-outline-danger" title="Clear / Return Transaction" onclick="return confirm('Are you sure you want to clear this transaction? This will return items to stock.');"><i class="bi bi-arrow-counterclockwise"></i></button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot class="table-light fw-bold" th:unless="${#lists.isEmpty(sales)}">
+                            <tr>
+                                <th colspan="4" class="text-end text-muted small text-uppercase py-2">Summary for period:</th>
+                                <th th:text="${'PKR ' + (totalSales != null ? #numbers.formatDecimal(totalSales, 1, 'COMMA', 2, 'POINT') : '0.00')}" class="text-end text-primary font-monospace py-2">PKR 0.00</th>
+                                <th th:text="${'PKR ' + (totalProfit != null ? #numbers.formatDecimal(totalProfit, 1, 'COMMA', 2, 'POINT') : '0.00')}" class="text-end text-success font-monospace py-2">PKR 0.00</th>
+                                <th colspan="2"></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

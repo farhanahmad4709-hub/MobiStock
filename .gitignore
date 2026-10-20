@@ -1,0 +1,94 @@
+# ==============================================================================
+# MobiStock - Git Ignore Configuration
+# ==============================================================================
+
+# Compiled & Build Artifacts
+target/
+build/
+out/
+bin/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+
+# Maven Wrapper Downloads & Cache
+.mvn/wrapper/dists/
+.mvn/wrapper/*.jar
+!.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.properties
+!mvnw
+!mvnw.cmd
+
+# IDE & Editor Configurations
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.settings/
+.project
+.classpath
+.metadata/
+*.swp
+*.swo
+*~
+*.bak
+.nbproject/
+.nb-gradle/
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Application Logs & Diagnostics
+*.log
+logs/
+temp/
+tmp/
+*.tmp
+*.temp
+crash*.log
+hs_err_pid*
+replay_pid*
+
+# Database Backups & Snapshots (Keep repo clean and prevent sensitive customer data leaks)
+mobistock_backup_*.sql
+*.sql.gz
+*.dump
+backups/
+MobiStock_Backups/
+
+# Keep sample seed scripts tracked
+!insert_phones.sql
+!insert_realistic_phones.sql
+
+# Sensitive Credentials, Secrets & OAuth Tokens
+credentials.json
+client_secret*.json
+tokens/
+stored_tokens/
+StoredCredential*
+*.env
+.env
+application-local.properties
+application-secret.properties
+application-dev.properties
+application-prod.properties
+
+# Scratch & Temporary Testing Files
+test.html
+test-*.html
+scratch/

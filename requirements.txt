@@ -1,0 +1,75 @@
+================================================================================
+MobiStock - Mobile Inventory & Point-of-Sale System
+System & Software Requirements Specification
+================================================================================
+
+1. SYSTEM & PLATFORM REQUIREMENTS
+--------------------------------------------------------------------------------
+- Operating System: Windows 10/11, Windows Server, macOS, or Linux
+- Java Runtime:     Java Development Kit (JDK) 17 LTS (Eclipse Adoptium Temurin or Oracle)
+- Build Tool:       Apache Maven 3.8+ (Maven Wrapper ./mvnw / ./mvnw.cmd included)
+- Database Engine:  MySQL 8.0+ or MariaDB 10.4+ (XAMPP / WampServer supported)
+- Architecture:     64-bit recommended
+- Memory (RAM):     Minimum 2 GB RAM (4 GB recommended)
+- Disk Space:       Minimum 500 MB free disk space (excluding database growth & backups)
+- Secondary Drive:  Secondary storage drive (e.g., D:\) recommended for local backup snapshots
+
+
+2. DATABASE & SERVICE PREREQUISITES
+--------------------------------------------------------------------------------
+- Database Name:    mobistock
+- Database Port:    3306 (default MySQL port)
+- Default User:     root
+- Default Password: (empty by default in XAMPP; configure in application.properties)
+- Encoding:         utf8mb4 (Collation: utf8mb4_unicode_ci)
+- MySQL Utilities:  mysqldump.exe & mysql.exe (required for automated backup & restore)
+
+
+3. NETWORK & RUNTIME PORTS
+--------------------------------------------------------------------------------
+- Application Port: 8080 (http://localhost:8080)
+- Network Mode:     100% Offline-capable (LAN / Localhost)
+- Cloud Backup:     Google Drive API v3 (Optional; syncs automatically when online)
+
+
+4. CORE BACKEND DEPENDENCIES (pom.xml)
+--------------------------------------------------------------------------------
+- Spring Boot Starter Web:                 3.1.x
+- Spring Boot Starter Data JPA:            3.1.x (Hibernate ORM)
+- Spring Boot Starter Security:            3.1.x (Form login & RBAC)
+- Spring Boot Starter Thymeleaf:           3.1.x (Server-side rendering)
+- Thymeleaf Extras Spring Security:        3.1.x
+- Thymeleaf Layout Dialect:                3.2.x
+- MySQL Connector/J:                       8.0.x
+- Lombok:                                  1.18.x (Boilerplate reduction)
+- Apache POI & POI-OOXML:                  5.2.3+ (Excel .xlsx export)
+- OpenCSV:                                 5.7+ (CSV reports & history export)
+- Google API Client (Drive v3):            1.35.x (Cloud backup integration)
+- Google OAuth Client (Jetty):             1.34.x
+
+
+5. VENDORED FRONTEND LIBRARIES (100% OFFLINE)
+--------------------------------------------------------------------------------
+- Bootstrap:           v5.3.0 (/css/bootstrap.min.css, /js/bootstrap.bundle.min.js)
+- Bootstrap Icons:     v1.10.5 (/css/bootstrap-icons.min.css, /css/fonts/bootstrap-icons.woff2, .woff)
+- jQuery:              v3.7.1 (/js/jquery.min.js)
+- DataTables:          v1.13.6 (/css/dataTables.bootstrap5.min.css, /js/jquery.dataTables.min.js, /js/dataTables.bootstrap5.min.js)
+- Chart.js:            v4.4.1 UMD (/js/chart.umd.min.js)
+
+
+6. HOW TO RUN
+--------------------------------------------------------------------------------
+Option A (Quick Batch Script):
+    Double-click `run.bat` in the project root.
+
+Option B (Command Line):
+    1. Compile and package:
+       mvnw.cmd clean package -DskipTests
+    2. Start the application:
+       java -jar target\mobistock-1.0.0.jar
+    3. Open in browser:
+       http://localhost:8080
+
+Default Admin Credentials:
+    Username: admin
+    Password: (set on initial setup)

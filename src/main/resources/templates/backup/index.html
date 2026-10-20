@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" layout:decorate="~{layout}">
+<head>
+    <title>Backup & Recovery - MobiStock</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <!-- Page Title & Top Actions -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h1 class="h3 mb-1 text-gray-800 fw-bold">Backup & Cloud Recovery</h1>
+                <p class="text-muted small mb-0">Automatic local secondary-drive storage, Google Drive sync, and point-in-time database restoration.</p>
+            </div>
+            <div class="d-flex gap-2">
+                <form th:action="@{/backup/create}" method="post" class="d-inline">
+                    <button type="submit" class="btn btn-primary shadow-sm" onclick="this.innerHTML='<span class=\'spinner-border spinner-border-sm me-1\'></span> Creating Backup...';">
+                        <i class="bi bi-shield-plus me-1"></i> Create Backup Now
+                    </button>
+                </form>
+                <form th:action="@{/backup/sync-drive}" method="post" class="d-inline" th:if="${config.googleDriveEnabled}">
+                    <button type="submit" class="btn btn-outline-success shadow-sm" title="Upload any pending backups to Google Drive">
+                        <i class="bi bi-arrow-repeat me-1"></i> Sync to Drive
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Metric KPI Cards -->
+        <div class="row g-3 mb-4">
+            <!-- Card 1: Secondary Drive Storage -->
+            <div class="col-md-4">
+                <div class="card h-100 border-left-primary shadow-sm card-hover">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <span class="text-uppercase small fw-bold text-primary">Secondary Drive Storage</span>
+                            <i class="bi bi-hdd-fill text-primary fs-4"></i>
+                        </div>
+                        <h5 class="mb-1 fw-bold text-dark" th:text="${config.localBackupDir}">D:\MobiStock_Backups</h5>
+                        <p class="text-muted small mb-0">
+                            <i class="bi bi-check-circle-fill text-success me-1"></i> <span th:text="${backups.size()}">0</span> Local Backup(s) Available
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Google Drive Status -->
+            <div class="col-md-4">
+                <div class="card h-100 border-left-success shadow-sm card-hover">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <span class="text-uppercase small fw-bold text-success">Google Drive Cloud</span>
+                            <i class="bi bi-google text-success fs-4"></i>
+                        </div>
+                        <h5 class="mb-1 fw-bold">
+                            <span th:if="${config.googleDriveEnabled}" class="badge badge-soft-success">
+                                <i class="bi bi-cloud-check-fill me-1"></i> Connected & Active
+                            </span>
+                            <span th:unless="${config.googleDriveEnabled}" class="badge badge-soft-warning">
+                                <i class="bi bi-cloud-slash me-1"></i> Not Configured
+                            </span>
+                        </h5>
+                        <p class="text-muted small mb-0">
+                            <span th:if="${config.lastDriveUploadAt != null}">
+                                Last synced: <strong th:text="${#temporals.format(config.lastDriveUploadAt, 'dd MMM yyyy, HH:mm')}">Time</strong>
+                            </span>
+                            <span th:unless="${config.lastDriveUploadAt != null}">
+                                Ready for automatic online backup sync
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Automated Scheduler -->
+            <div class="col-md-4">
+                <div class="card h-100 border-left-info shadow-sm card-hover">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <span class="text-uppercase small fw-bold text-info">Auto-Backup Engine</span>
+                            <i class="bi bi-clock-history text-info fs-4"></i>
+                        </div>
+                        <h5 class="mb-1 fw-bold">
+                            <span th:if="${config.autoBackupEnabled}" class="badge badge-soft-info">
+                                <i class="bi bi-shield-check me-1"></i> Daily (Every Night at 23:00)
+                            </span>
+                            <span th:unless="${config.autoBackupEnabled}" class="badge badge-soft-danger">
+                                <i class="bi bi-pause-circle me-1"></i> Paused
+                            </span>
+                        </h5>
+                        <p class="text-muted small mb-0">
+                            <span th:if="${config.lastBackupAt != null}">
+                                Last run: <strong th:text="${#temporals.format(config.lastBackupAt, 'dd MMM yyyy, HH:mm')}">Time</strong>
+                            </span>
+                            <span th:unless="${config.lastBackupAt != null}">
+                                Next run scheduled automatically
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs: History & Configuration -->
+        <ul class="nav nav-pills mb-4" id="backupTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="history-tab" data-bs-toggle="pill" data-bs-target="#historyPane" type="button" role="tab">
+                    <i class="bi bi-list-check me-1"></i> Backup History & Recovery
+                </button>
+            </li>
+            <li class="nav-item" role="presentation" sec:authorize="hasRole('ADMIN')">
+                <button class="nav-link" id="restore-tab" data-bs-toggle="pill" data-bs-target="#restorePane" type="button" role="tab">
+                    <i class="bi bi-cloud-arrow-down me-1"></i> Restore From File
+                </button>
+            </li>
+            <li class="nav-item" role="presentation" sec:authorize="hasRole('ADMIN')">
+                <button class="nav-link" id="settings-tab" data-bs-toggle="pill" data-bs-target="#settingsPane" type="button" role="tab">
+                    <i class="bi bi-gear me-1"></i> Google Drive & Storage Settings
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="backupTabContent">
+            <!-- Pane 1: Backup History Table -->
+            <div class="tab-pane fade show active" id="historyPane" role="tabpanel">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                        <h6 class="m-0 font-weight-bold text-primary"><i class="bi bi-archive me-1"></i> Stored Backups</h6>
+                        <span class="text-muted small">Offline-first: Stored locally first, then synced online to Google Drive</span>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="ps-3" style="max-width: 220px;">Backup File</th>
+                                        <th class="text-nowrap">Date & Time</th>
+                                        <th class="text-nowrap">Size</th>
+                                        <th class="text-nowrap">Type</th>
+                                        <th class="text-nowrap">Triggered By</th>
+                                        <th class="text-nowrap">Cloud Sync</th>
+                                        <th class="text-end pe-4 text-nowrap" style="width: 170px; min-width: 170px;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="b : ${backups}">
+                                        <td class="ps-3" style="max-width: 220px;">
+                                            <div class="d-flex align-items-center" style="min-width: 0;">
+                                                <i class="bi bi-filetype-sql fs-4 text-primary me-2 flex-shrink-0"></i>
+                                                <div class="text-truncate" style="min-width: 0;">
+                                                    <span class="fw-bold text-dark d-block text-truncate" th:text="${b.filename}" th:title="${b.filename}">mobistock_backup.sql</span>
+                                                    <small class="text-muted font-monospace text-truncate d-block" style="font-size: 0.72rem;" th:text="${b.filePath}" th:title="${b.filePath}">D:\MobiStock_Backups\...</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-nowrap" th:text="${#temporals.format(b.createdAt, 'dd MMM yyyy, HH:mm')}">Date</td>
+                                        <td class="text-nowrap">
+                                            <span class="badge bg-light text-dark border" th:text="${b.fileSizeBytes != null ? (b.fileSizeBytes / 1024) + ' KB' : '-'}">0 KB</span>
+                                        </td>
+                                        <td class="text-nowrap">
+                                            <span th:if="${b.backupType == 'AUTOMATIC'}" class="badge badge-soft-info">
+                                                <i class="bi bi-clock-fill me-1"></i> Auto
+                                            </span>
+                                            <span th:if="${b.backupType == 'MANUAL'}" class="badge badge-soft-primary">
+                                                <i class="bi bi-person-fill me-1"></i> Manual
+                                            </span>
+                                        </td>
+                                        <td class="text-capitalize text-nowrap" th:text="${b.triggeredBy}">Admin</td>
+                                        <td class="text-nowrap">
+                                            <span th:if="${b.googleDriveStatus == 'UPLOADED'}" class="badge badge-soft-success" title="Synced to Google Drive">
+                                                <i class="bi bi-cloud-check-fill me-1"></i> Uploaded
+                                            </span>
+                                            <span th:if="${b.googleDriveStatus == 'PENDING'}" class="badge badge-soft-warning" th:title="${b.errorMessage}">
+                                                <i class="bi bi-cloud-arrow-up me-1"></i> Pending
+                                            </span>
+                                            <span th:if="${b.googleDriveStatus == 'NOT_CONFIGURED'}" class="badge bg-light text-muted border">
+                                                <i class="bi bi-hdd me-1"></i> Local
+                                            </span>
+                                            <span th:if="${b.googleDriveStatus == 'FAILED'}" class="badge badge-soft-danger" th:title="${b.errorMessage}">
+                                                <i class="bi bi-exclamation-triangle me-1"></i> Failed
+                                            </span>
+                                        </td>
+                                        <td class="text-end pe-4 text-nowrap" style="width: 170px; min-width: 170px;">
+                                            <div class="btn-group btn-group-sm">
+                                                <!-- Download -->
+                                                <a th:href="@{/backup/download/{id}(id=${b.id})}" class="btn btn-outline-secondary px-2" title="Download .sql to USB / PC">
+                                                    <i class="bi bi-download"></i> Download
+                                                </a>
+                                                <!-- Restore (Admin Only) -->
+                                                <button sec:authorize="hasRole('ADMIN')" type="button" class="btn btn-outline-danger px-2" 
+                                                        data-bs-toggle="modal" th:data-bs-target="'#restoreModal-' + ${b.id}" title="Restore database from this backup">
+                                                    <i class="bi bi-arrow-counterclockwise"></i> Restore
+                                                </button>
+                                            </div>
+
+                                            <!-- Restore Confirmation Modal -->
+                                            <div sec:authorize="hasRole('ADMIN')" class="modal fade text-start" th:id="'restoreModal-' + ${b.id}" tabindex="-1" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content shadow-lg border-0">
+                                                        <div class="modal-header bg-danger text-white">
+                                                            <h5 class="modal-title fw-bold"><i class="bi bi-exclamation-triangle-fill me-2"></i> Confirm Database Restore</h5>
+                                                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                                                        </div>
+                                                        <div class="modal-body py-4">
+                                                            <p class="mb-2">Are you sure you want to restore the entire MobiStock database from this point in time?</p>
+                                                            <div class="p-3 bg-light rounded border mb-3">
+                                                                <div class="fw-bold text-dark" th:text="${b.filename}">mobistock_backup.sql</div>
+                                                                <small class="text-muted">Created: <span th:text="${#temporals.format(b.createdAt, 'dd MMM yyyy, HH:mm:ss')}">Time</span></small>
+                                                            </div>
+                                                            <div class="alert alert-warning py-2 mb-0 small">
+                                                                <i class="bi bi-info-circle me-1"></i> <strong>Warning:</strong> Current data will be replaced with data from this backup snapshot.
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer bg-light">
+                                                            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+                                                            <form th:action="@{/backup/restore/{id}(id=${b.id})}" method="post">
+                                                                <button type="submit" class="btn btn-danger btn-sm" onclick="this.innerHTML='<span class=\'spinner-border spinner-border-sm me-1\'></span> Restoring...';">
+                                                                    <i class="bi bi-arrow-counterclockwise me-1"></i> Yes, Restore Now
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr th:if="${#lists.isEmpty(backups)}">
+                                        <td colspan="7" class="text-center py-5 text-muted">
+                                            <i class="bi bi-shield-x fs-1 d-block mb-2 text-gray-300"></i>
+                                            No backups found yet. Click <strong>"Create Backup Now"</strong> above to make your first backup!
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pane 2: Restore from Uploaded File (Admin Only) -->
+            <div sec:authorize="hasRole('ADMIN')" class="tab-pane fade" id="restorePane" role="tabpanel">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-danger"><i class="bi bi-upload me-1"></i> Restore From External Backup File</h6>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted">If your local machine was replaced or repaired, or if you downloaded a backup file from Google Drive, you can upload it here to fully restore your inventory, phones, sales, and accounts.</p>
+                        <form th:action="@{/backup/restore-upload}" method="post" enctype="multipart/form-data" class="col-lg-6" onsubmit="return confirm('WARNING: Restoring will overwrite all current database tables with data from the uploaded file. Proceed?');">
+                            <div class="mb-3">
+                                <label for="backupFile" class="form-label fw-bold">Select .sql Backup File *</label>
+                                <input class="form-control" type="file" id="backupFile" name="backupFile" accept=".sql" required>
+                                <small class="text-muted">Only valid MobiStock .sql backup dump files are supported.</small>
+                            </div>
+                            <button type="submit" class="btn btn-danger shadow-sm">
+                                <i class="bi bi-arrow-counterclockwise me-1"></i> Upload & Restore Database
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pane 3: Configuration & Google Drive Settings (Admin Only) -->
+            <div sec:authorize="hasRole('ADMIN')" class="tab-pane fade" id="settingsPane" role="tabpanel">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary"><i class="bi bi-sliders me-1"></i> Backup & Google Drive Configuration</h6>
+                    </div>
+                    <div class="card-body">
+                        <form th:action="@{/backup/settings}" method="post" class="col-lg-8">
+                            <!-- Local Storage Directory -->
+                            <div class="mb-4">
+                                <h6 class="fw-bold text-dark mb-2"><i class="bi bi-hdd me-1 text-primary"></i> 1. Secondary Drive Storage Location</h6>
+                                <p class="text-muted small">Specify the directory on your secondary drive (e.g. D: drive) to protect against C: drive corruption.</p>
+                                <div class="input-group mb-2">
+                                    <span class="input-group-text bg-light"><i class="bi bi-folder2-open"></i></span>
+                                    <input type="text" class="form-control" name="localBackupDir" th:value="${config.localBackupDir}" required placeholder="e.g. D:\MobiStock_Backups">
+                                </div>
+                                <small class="text-muted">Defaults to <code>D:\MobiStock_Backups</code>. If D: is unavailable, it automatically falls back to <code>./backups</code>.</small>
+                            </div>
+
+                            <hr class="my-4">
+
+                            <!-- Automated Scheduling -->
+                            <div class="mb-4">
+                                <h6 class="fw-bold text-dark mb-2"><i class="bi bi-clock-history me-1 text-info"></i> 2. Automated Scheduled Backups</h6>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="autoBackupEnabled" name="autoBackupEnabled" value="true" th:checked="${config.autoBackupEnabled}">
+                                    <label class="form-check-label fw-bold" for="autoBackupEnabled">Enable Automatic Background Backups</label>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold">Backup Schedule Frequency</label>
+                                        <select class="form-select" name="backupSchedule">
+                                            <option value="DAILY_NIGHT" th:selected="${config.backupSchedule == 'DAILY_NIGHT'}">Daily Nightly (Every night at 11:00 PM)</option>
+                                            <option value="EVERY_12_HOURS" th:selected="${config.backupSchedule == 'EVERY_12_HOURS'}">Twice a Day (Every 12 Hours)</option>
+                                            <option value="EVERY_6_HOURS" th:selected="${config.backupSchedule == 'EVERY_6_HOURS'}">Frequent (Every 6 Hours)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="my-4">
+
+                            <!-- Google Drive Integration -->
+                            <div class="mb-4">
+                                <h6 class="fw-bold text-dark mb-2"><i class="bi bi-google me-1 text-success"></i> 3. Google Drive Online Cloud Backup</h6>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="googleDriveEnabled" name="googleDriveEnabled" value="true" th:checked="${config.googleDriveEnabled}">
+                                    <label class="form-check-label fw-bold" for="googleDriveEnabled">Enable Online Sync to Google Drive</label>
+                                </div>
+
+                                <div class="card bg-light border-0 p-3 mb-3">
+                                    <label class="form-label fw-bold small">Integration Method</label>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="radio" name="googleDriveMode" id="modeDesktop" value="DESKTOP_SYNC" th:checked="${config.googleDriveMode == 'DESKTOP_SYNC'}">
+                                        <label class="form-check-label" for="modeDesktop">
+                                            <strong>Google Drive for Desktop (Recommended)</strong> — Automatically copies backups to your PC's Google Drive folder (e.g. <code>G:\My Drive\MobiStock_Backups</code>). Zero API setup required; Google's desktop app automatically uploads it to the cloud.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="googleDriveMode" id="modeApi" value="SERVICE_ACCOUNT" th:checked="${config.googleDriveMode == 'SERVICE_ACCOUNT'}">
+                                        <label class="form-check-label" for="modeApi">
+                                            <strong>Google Drive Cloud API (Service Account)</strong> — Direct cloud upload using a Google Cloud Service Account JSON credentials key.
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">Google Drive Desktop Sync Path</label>
+                                    <input type="text" class="form-control" name="googleDriveDesktopPath" th:value="${config.googleDriveDesktopPath}" placeholder="e.g. G:\My Drive\MobiStock_Backups">
+                                    <small class="text-muted">Enter the folder path where your Google Drive desktop application syncs files.</small>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">Google Drive Folder ID (Optional / API Mode)</label>
+                                    <input type="text" class="form-control" name="googleDriveFolderId" th:value="${config.googleDriveFolderId}" placeholder="e.g. 1a2b3c4d5e...">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary px-4 shadow-sm">
+                                <i class="bi bi-check2-circle me-1"></i> Save Configuration
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

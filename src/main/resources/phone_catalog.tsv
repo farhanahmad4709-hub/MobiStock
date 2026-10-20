@@ -1,0 +1,1001 @@
+Brands	Models	Colors	Ram/Storage
+Apple	iPhone 2G	Silver	0.125/4, 0.125/8, 0.125/16
+Apple	iPhone 3G	Black, White	0.128/8, 0.128/16
+Apple	iPhone 3GS	Black, White	0.256/16, 0.256/32
+Apple	iPhone 4	Black, White	0.512/8, 0.512/16, 0.512/32
+Apple	iPhone 4S	Black, White	0.512/16, 0.512/32, 0.512/64
+Apple	iPhone 5	Black, White	1/16, 1/32, 1/64
+Apple	iPhone 5c	White, Pink, Yellow, Blue, Green	1/8, 1/16, 1/32
+Apple	iPhone 5s	Space Gray, Silver, Gold	1/16, 1/32, 1/64
+Apple	iPhone 6	Space Gray, Silver, Gold	1/16, 1/64, 1/128
+Apple	iPhone 6 Plus	Space Gray, Silver, Gold	1/16, 1/64, 1/128
+Apple	iPhone 6s	Space Gray, Silver, Gold, Rose Gold	2/16, 2/32, 2/64, 2/128
+Apple	iPhone 6s Plus	Space Gray, Silver, Gold, Rose Gold	2/16, 2/32, 2/64, 2/128
+Apple	iPhone SE (1st gen)	Space Gray, Silver, Gold, Rose Gold	2/16, 2/32, 2/64, 2/128
+Apple	iPhone 7	Black, Jet Black, Silver, Gold, Rose Gold, Red	2/32, 2/128, 2/256
+Apple	iPhone 7 Plus	Black, Jet Black, Silver, Gold, Rose Gold, Red	3/32, 3/128, 3/256
+Apple	iPhone 8	Space Gray, Silver, Gold, Red	2/64, 2/128, 2/256
+Apple	iPhone 8 Plus	Space Gray, Silver, Gold, Red	3/64, 3/128, 3/256
+Apple	iPhone X	Space Gray, Silver	3/64, 3/256
+Apple	iPhone XR	Black, White, Blue, Yellow, Coral, Red	3/64, 3/128, 3/256
+Apple	iPhone XS	Space Gray, Silver, Gold	4/64, 4/256, 4/512
+Apple	iPhone XS Max	Space Gray, Silver, Gold	4/64, 4/256, 4/512
+Apple	iPhone 11	Black, White, Green, Yellow, Purple, Red	4/64, 4/128, 4/256
+Apple	iPhone 11 Pro	Space Gray, Silver, Gold, Midnight Green	4/64, 4/256, 4/512
+Apple	iPhone 11 Pro Max	Space Gray, Silver, Gold, Midnight Green	4/64, 4/256, 4/512
+Apple	iPhone SE (2nd gen)	Black, White, Red	3/64, 3/128, 3/256
+Apple	iPhone 12 mini	Black, White, Red, Green, Blue, Purple	4/64, 4/128, 4/256
+Apple	iPhone 12	Black, White, Red, Green, Blue, Purple	4/64, 4/128, 4/256
+Apple	iPhone 12 Pro	Graphite, Silver, Gold, Pacific Blue	6/128, 6/256, 6/512
+Apple	iPhone 12 Pro Max	Graphite, Silver, Gold, Pacific Blue	6/128, 6/256, 6/512
+Apple	iPhone 13 mini	Pink, Blue, Midnight, Starlight, Red, Green	4/128, 4/256, 4/512
+Apple	iPhone 13	Pink, Blue, Midnight, Starlight, Red, Green	4/128, 4/256, 4/512
+Apple	iPhone 13 Pro	Graphite, Gold, Silver, Sierra Blue, Alpine Green	6/128, 6/256, 6/512, 6/1024
+Apple	iPhone 13 Pro Max	Graphite, Gold, Silver, Sierra Blue, Alpine Green	6/128, 6/256, 6/512, 6/1024
+Apple	iPhone SE (3rd gen)	Midnight, Starlight, Red	4/64, 4/128, 4/256
+Apple	iPhone 14	Blue, Purple, Midnight, Starlight, Red, Yellow	6/128, 6/256, 6/512
+Apple	iPhone 14 Plus	Blue, Purple, Midnight, Starlight, Red, Yellow	6/128, 6/256, 6/512
+Apple	iPhone 14 Pro	Space Black, Silver, Gold, Deep Purple	6/128, 6/256, 6/512, 6/1024
+Apple	iPhone 14 Pro Max	Space Black, Silver, Gold, Deep Purple	6/128, 6/256, 6/512, 6/1024
+Apple	iPhone 15	Black, Blue, Green, Yellow, Pink	6/128, 6/256, 6/512
+Apple	iPhone 15 Plus	Black, Blue, Green, Yellow, Pink	6/128, 6/256, 6/512
+Apple	iPhone 15 Pro	Black Titanium, White Titanium, Blue Titanium, Natural Titanium	8/128, 8/256, 8/512, 8/1024
+Apple	iPhone 15 Pro Max	Black Titanium, White Titanium, Blue Titanium, Natural Titanium	8/256, 8/512, 8/1024
+Apple	iPhone 16e	Black, White	8/128, 8/256, 8/512
+Apple	iPhone 16	Black, White, Pink, Teal, Ultramarine	8/128, 8/256, 8/512
+Apple	iPhone 16 Plus	Black, White, Pink, Teal, Ultramarine	8/128, 8/256, 8/512
+Apple	iPhone 16 Pro	Black Titanium, White Titanium, Natural Titanium, Desert Titanium	8/128, 8/256, 8/512, 8/1024
+Apple	iPhone 16 Pro Max	Black Titanium, White Titanium, Natural Titanium, Desert Titanium	8/256, 8/512, 8/1024
+Apple	iPhone 17	Black, White, Mist Blue, Sage, Lavender	8/256, 8/512
+Apple	iPhone Air	Space Black, Cloud White, Light Gold, Sky Blue	12/256, 12/512, 12/1024
+Apple	iPhone 17 Pro	Silver, Cosmic Orange, Deep Blue	12/256, 12/512, 12/1024
+Apple	iPhone 17 Pro Max	Silver, Cosmic Orange, Deep Blue	12/256, 12/512, 12/1024, 12/2048
+Samsung	Galaxy S	Black	0.5/8, 0.5/16
+Samsung	Galaxy S II	Black, White, Pink	1/16, 1/32
+Samsung	Galaxy S III	Pebble Blue, Marble White, Garnet Red, Amber Brown	1/16, 1/32, 1/64
+Samsung	Galaxy S4	Black Mist, White Frost, Blue Arctic, Red Aurora, Purple Mirage, Brown Autumn	2/16, 2/32, 2/64
+Samsung	Galaxy S4 mini	Black Mist, White Frost	1.5/8
+Samsung	Galaxy S5	Charcoal Black, Shimmery White, Electric Blue, Copper Gold	2/16, 2/32
+Samsung	Galaxy S5 mini	Charcoal Black, Shimmery White, Electric Blue, Copper Gold	1.5/16
+Samsung	Galaxy S6	Black Sapphire, White Pearl, Gold Platinum, Blue Topaz	3/32, 3/64, 3/128
+Samsung	Galaxy S6 edge	Black Sapphire, White Pearl, Gold Platinum, Green Emerald	3/32, 3/64, 3/128
+Samsung	Galaxy S6 edge+	Black Sapphire, Gold Platinum, Silver Titanium, White Pearl	4/32, 4/64
+Samsung	Galaxy S7	Black Onyx, Gold Platinum, Silver Titanium, White Pearl, Pink Gold	4/32, 4/64
+Samsung	Galaxy S7 edge	Black Onyx, Gold Platinum, Silver Titanium, Blue Coral	4/32, 4/64
+Samsung	Galaxy S8	Midnight Black, Orchid Gray, Arctic Silver, Coral Blue, Maple Gold	4/64
+Samsung	Galaxy S8+	Midnight Black, Orchid Gray, Arctic Silver, Coral Blue, Maple Gold	4/64, 6/128
+Samsung	Galaxy S9	Midnight Black, Coral Blue, Lilac Purple, Titanium Gray, Sunrise Gold	4/64, 4/128, 4/256
+Samsung	Galaxy S9+	Midnight Black, Coral Blue, Lilac Purple, Titanium Gray, Sunrise Gold	6/64, 6/128, 6/256
+Samsung	Galaxy S10e	Prism Black, Prism White, Prism Green, Canary Yellow, Flamingo Pink	6/128, 8/256
+Samsung	Galaxy S10	Prism Black, Prism White, Prism Green, Prism Blue, Flamingo Pink	8/128, 8/512
+Samsung	Galaxy S10+	Prism Black, Prism White, Prism Green, Prism Blue, Ceramic Black, Ceramic White	8/128, 8/512, 12/1024
+Samsung	Galaxy S10 5G	Majestic Black, Crown Silver	8/256, 8/512
+Samsung	Galaxy S20	Cosmic Gray, Cloud Blue, Cloud Pink, Cloud White	8/128, 12/128, 12/256
+Samsung	Galaxy S20+	Cosmic Black, Cosmic Gray, Cloud Blue, Cloud White, Aura Red	8/128, 12/128, 12/256, 12/512
+Samsung	Galaxy S20 Ultra	Cosmic Black, Cosmic Gray, Cloud White	12/128, 12/256, 12/512, 16/512
+Samsung	Galaxy S20 FE	Cloud Navy, Cloud Lavender, Cloud Mint, Cloud Red, Cloud Orange, Cloud White	6/128, 8/128, 8/256
+Samsung	Galaxy S21	Phantom Gray, Phantom White, Phantom Violet, Phantom Pink	8/128, 8/256
+Samsung	Galaxy S21+	Phantom Black, Phantom Silver, Phantom Violet	8/128, 8/256
+Samsung	Galaxy S21 Ultra	Phantom Black, Phantom Silver, Phantom Titanium, Phantom Navy, Phantom Brown	12/128, 12/256, 12/512, 16/512
+Samsung	Galaxy S21 FE	Graphite, White, Olive, Lavender	6/128, 8/128, 8/256
+Samsung	Galaxy S22	Phantom Black, Phantom White, Green, Pink Gold	8/128, 8/256
+Samsung	Galaxy S22+	Phantom Black, Phantom White, Green, Pink Gold	8/128, 8/256
+Samsung	Galaxy S22 Ultra	Phantom Black, Phantom White, Burgundy, Green	8/128, 12/256, 12/512, 12/1024
+Samsung	Galaxy S23	Phantom Black, Cream, Green, Lavender	8/128, 8/256, 8/512
+Samsung	Galaxy S23+	Phantom Black, Cream, Green, Lavender	8/256, 8/512
+Samsung	Galaxy S23 Ultra	Phantom Black, Cream, Green, Lavender	8/256, 12/256, 12/512, 12/1024
+Samsung	Galaxy S23 FE	Mint, Cream, Purple, Graphite	8/128, 8/256
+Samsung	Galaxy S24	Onyx Black, Marble Gray, Cobalt Violet, Amber Yellow	8/128, 8/256, 8/512
+Samsung	Galaxy S24+	Onyx Black, Marble Gray, Cobalt Violet, Amber Yellow	12/256, 12/512
+Samsung	Galaxy S24 Ultra	Titanium Black, Titanium Gray, Titanium Violet, Titanium Yellow	12/256, 12/512, 12/1024
+Samsung	Galaxy S24 FE	Blue, Graphite, Gray, Mint, Yellow	8/128, 8/256, 8/512
+Samsung	Galaxy S25	Icyblue, Mint, Navy, Silver Shadow	12/128, 12/256, 12/512
+Samsung	Galaxy S25+	Icyblue, Mint, Navy, Silver Shadow	12/256, 12/512
+Samsung	Galaxy S25 Ultra	Titanium Black, Titanium Gray, Titanium Whitesilver, Titanium Silverblue	12/256, 12/512, 12/1024, 16/1024
+Samsung	Galaxy S25 Edge	Titanium Silver, Titanium Jetblack, Titanium Icyblue	12/256, 12/512
+Samsung	Galaxy S25 FE	Navy, Icyblue, Jetblack, White	8/128, 8/256, 8/512
+Samsung	Galaxy Note	Carbon Blue, Ceramic White	1/16
+Samsung	Galaxy Note II	Titanium Gray, Marble White, Amber Brown	2/16, 2/32, 2/64
+Samsung	Galaxy Note 3	Jet Black, Classic White, Blush Pink	3/32, 3/64
+Samsung	Galaxy Note 4	Charcoal Black, Frost White, Bronze Gold, Blossom Pink	3/32
+Samsung	Galaxy Note Edge	Charcoal Black, Frost White	3/32, 3/64
+Samsung	Galaxy Note 5	Black Sapphire, White Pearl, Gold Platinum, Silver Titanium	4/32, 4/64
+Samsung	Galaxy Note 7	Black Onyx, Silver Titanium, Gold Platinum, Blue Coral	4/64
+Samsung	Galaxy Note 8	Midnight Black, Orchid Gray, Maple Gold, Deep Sea Blue	6/64, 6/128, 6/256
+Samsung	Galaxy Note 9	Midnight Black, Ocean Blue, Lavender Purple, Metallic Copper	6/128, 8/512
+Samsung	Galaxy Note 10	Aura Black, Aura Glow, Aura White, Aura Red	8/256
+Samsung	Galaxy Note 10+	Aura Black, Aura Glow, Aura White, Aura Blue	12/256, 12/512
+Samsung	Galaxy Note 10 Lite	Aura Black, Aura Glow, Aura Red	6/128, 8/128
+Samsung	Galaxy Note 20	Mystic Bronze, Mystic Gray, Mystic Green	8/256
+Samsung	Galaxy Note 20 Ultra	Mystic Black, Mystic White, Mystic Bronze	12/256, 12/512
+Samsung	Galaxy Fold	Cosmos Black, Space Silver, Martian Green, Astro Blue	12/512
+Samsung	Galaxy Z Flip	Mirror Purple, Mirror Black, Mirror Gold	8/256
+Samsung	Galaxy Z Fold2	Mystic Black, Mystic Bronze	12/256, 12/512
+Samsung	Galaxy Z Flip3	Cream, Green, Lavender, Phantom Black	8/128, 8/256
+Samsung	Galaxy Z Fold3	Phantom Black, Phantom Green, Phantom Silver	12/256, 12/512
+Samsung	Galaxy Z Flip4	Graphite, Pink Gold, Blue, Bora Purple	8/128, 8/256, 8/512
+Samsung	Galaxy Z Fold4	Phantom Black, Graygreen, Beige	12/256, 12/512, 12/1024
+Samsung	Galaxy Z Flip5	Mint, Graphite, Cream, Lavender	8/256, 8/512
+Samsung	Galaxy Z Fold5	Phantom Black, Icy Blue, Cream	12/256, 12/512, 12/1024
+Samsung	Galaxy Z Flip6	Silver Shadow, Blue, Yellow, Mint	12/256, 12/512
+Samsung	Galaxy Z Fold6	Silver Shadow, Pink, Navy	12/256, 12/512, 12/1024
+Samsung	Galaxy Z Flip7	Blue Shadow, Jetblack, Coral Red, Mint	12/256, 12/512
+Samsung	Galaxy Z Fold7	Blue Shadow, Silver Shadow, Jetblack, Mint	12/256, 12/512, 16/1024
+Samsung	Galaxy Z Flip7 FE	Black, White	8/128, 8/256
+Samsung	Galaxy Ace	Black, White	0.278/0.158
+Samsung	Galaxy Y	Metallic Gray, Pure White, Pink	0.29/0.18
+Samsung	Galaxy Grand Prime	Gray, White, Gold	1/8
+Samsung	Galaxy Core Prime	Gray, White, Blue	1/8
+Samsung	Galaxy Mega 6.3	Black, White	1.5/8, 1.5/16
+Samsung	Galaxy Alpha	Charcoal Black, Dazzling White, Frosted Gold, Scuba Blue	2/32
+Samsung	Galaxy A3 (2015)	Midnight Black, Pearl White, Soft Pink, Platinum Silver	1/16
+Samsung	Galaxy A5 (2016)	Black, White, Gold, Pink	2/16
+Samsung	Galaxy A7 (2016)	Black, White, Gold, Pink	3/16
+Samsung	Galaxy A5 (2017)	Black Sky, Gold Sand, Blue Mist, Peach Cloud	3/32
+Samsung	Galaxy A8 (2018)	Black, Gold, Blue, Orchid Gray	4/32, 4/64, 6/64
+Samsung	Galaxy A7 (2018)	Black, Blue, Gold, Pink	4/64, 6/128
+Samsung	Galaxy A9 (2018)	Caviar Black, Lemonade Blue, Bubblegum Pink	6/128, 8/128
+Samsung	Galaxy A10	Black, Blue, Red	2/32
+Samsung	Galaxy A20	Black, Blue, Red, Orange	3/32
+Samsung	Galaxy A30	Black, Blue, White	3/32, 4/64
+Samsung	Galaxy A50	Black, Blue, White, Coral	4/64, 4/128, 6/128
+Samsung	Galaxy A70	Black, Blue, White, Coral	6/128, 8/128
+Samsung	Galaxy A80	Angel Gold, Ghost White, Phantom Black	8/128
+Samsung	Galaxy A01	Black, Blue, Red	2/16
+Samsung	Galaxy A11	Black, White, Red, Blue	2/32, 3/32
+Samsung	Galaxy A21s	Black, White, Red, Blue	3/32, 4/64, 6/128
+Samsung	Galaxy A31	Prism Crush Black, Prism Crush White, Prism Crush Blue, Prism Crush Red	4/64, 4/128, 6/128
+Samsung	Galaxy A51	Prism Crush Black, Prism Crush White, Prism Crush Blue, Prism Crush Pink	4/64, 6/128, 8/128
+Samsung	Galaxy A71	Prism Crush Black, Prism Crush Silver, Prism Crush Blue, Haze Crush Silver	6/128, 8/128
+Samsung	Galaxy A02s	Black, White, Blue	3/32, 4/64
+Samsung	Galaxy A12	Black, White, Blue, Red	3/32, 4/64, 4/128, 6/128
+Samsung	Galaxy A22	Black, White, Mint, Violet	4/64, 4/128, 6/128
+Samsung	Galaxy A32	Awesome Black, Awesome White, Awesome Blue, Awesome Violet	4/64, 4/128, 6/128, 8/128
+Samsung	Galaxy A42 5G	Prism Dot Black, Prism Dot Gray, Prism Dot White	4/128, 6/128, 8/128
+Samsung	Galaxy A52	Awesome Black, Awesome White, Awesome Blue, Awesome Violet	6/128, 8/128, 8/256
+Samsung	Galaxy A72	Awesome Black, Awesome White, Awesome Blue, Awesome Violet	6/128, 8/128, 8/256
+Samsung	Galaxy A03	Black, White, Red, Blue	3/32, 4/64, 4/128
+Samsung	Galaxy A13	Black, White, Blue, Peach	3/32, 4/64, 4/128, 6/128
+Samsung	Galaxy A23	Black, White, Blue, Peach	4/64, 4/128, 6/128, 8/128
+Samsung	Galaxy A33 5G	Awesome Black, Awesome White, Awesome Blue, Awesome Peach	6/128, 8/128
+Samsung	Galaxy A53 5G	Awesome Black, Awesome White, Awesome Blue, Awesome Peach	6/128, 8/128, 8/256
+Samsung	Galaxy A73 5G	Awesome Gray, Awesome White, Awesome Mint	6/128, 8/128, 8/256
+Samsung	Galaxy A04	Black, Copper, Green, White	3/32, 4/64, 4/128
+Samsung	Galaxy A14	Black, Silver, Green, Light Green	4/64, 4/128, 6/128
+Samsung	Galaxy A24	Black, Silver, Green, Lime	4/128, 6/128, 8/128
+Samsung	Galaxy A34 5G	Awesome Graphite, Awesome Lime, Awesome Silver, Awesome Violet	6/128, 8/128, 8/256
+Samsung	Galaxy A54 5G	Awesome Graphite, Awesome Lime, Awesome Violet, Awesome White	6/128, 8/128, 8/256
+Samsung	Galaxy A05	Black, Light Green, Silver	4/64, 4/128, 6/128
+Samsung	Galaxy A05s	Black, Light Green, Light Violet, Silver	4/64, 4/128, 6/128
+Samsung	Galaxy A15	Blue Black, Blue, Light Blue, Yellow	4/128, 6/128, 8/128, 8/256
+Samsung	Galaxy A25 5G	Blue Black, Blue, Yellow, Light Blue	6/128, 8/128, 8/256
+Samsung	Galaxy A35 5G	Awesome Iceblue, Awesome Lilac, Awesome Lemon, Awesome Navy	6/128, 8/128, 8/256
+Samsung	Galaxy A55 5G	Awesome Iceblue, Awesome Lilac, Awesome Lemon, Awesome Navy	8/128, 8/256, 12/256
+Samsung	Galaxy A06	Black, Light Blue, Light Green	4/64, 4/128, 6/128
+Samsung	Galaxy A16	Black, Blue Black, Gray, Light Green	4/128, 6/128, 8/128, 8/256
+Samsung	Galaxy A26 5G	Black, White, Mint, Peach Pink	6/128, 8/128, 8/256
+Samsung	Galaxy A36 5G	Awesome Black, Awesome Lavender, Awesome Lime, Awesome White	6/128, 8/128, 8/256, 12/256
+Samsung	Galaxy A56 5G	Awesome Graphite, Awesome Lightgray, Awesome Olive, Awesome Pink	8/128, 8/256, 12/256
+Samsung	Galaxy A07	Black, Green, Light Violet	4/64, 4/128, 6/128
+Samsung	Galaxy A17 5G	Black, Blue, Gray	4/128, 6/128, 8/128, 8/256
+Samsung	Galaxy M10	Charcoal Black, Ocean Blue	2/16, 3/32
+Samsung	Galaxy M20	Charcoal Black, Ocean Blue	3/32, 4/64
+Samsung	Galaxy M30	Gradation Black, Gradation Blue	3/32, 4/64, 6/128
+Samsung	Galaxy M31	Ocean Blue, Space Black, Iceberg Blue	6/64, 6/128, 8/128
+Samsung	Galaxy M51	Celestial Black, Electric Blue	6/128, 8/128
+Samsung	Galaxy M12	Black, Blue, Teal	3/32, 4/64, 4/128, 6/128
+Samsung	Galaxy M32	Black, Light Blue	4/64, 4/128, 6/128, 8/128
+Samsung	Galaxy M52 5G	Icy Blue, Blazing Black, Light Blue	6/128, 8/128
+Samsung	Galaxy M33 5G	Emerald Brown, Mystique Green, Ocean Blue	6/128, 8/128
+Samsung	Galaxy M53 5G	Mystique Green, Deep Ocean Blue	6/128, 8/128
+Samsung	Galaxy M13	Aqua Green, Midnight Blue, Stardust Brown	4/64, 4/128, 6/128
+Samsung	Galaxy M14 5G	Berry Blue, Icy Silver, Smoky Teal	4/128, 6/128
+Samsung	Galaxy M34 5G	Midnight Blue, Prism Silver, Waterfall Blue	6/128, 8/128
+Samsung	Galaxy M54 5G	Midnight Blue, Silver	8/128, 8/256
+Samsung	Galaxy M15 5G	Celestial Blue, Stone Gray, Prism Blue	4/128, 6/128, 8/128
+Samsung	Galaxy M35 5G	Daybreak Blue, Moonlight Blue, Thunder Gray	6/128, 8/128, 8/256
+Samsung	Galaxy M55 5G	Denim Black, Light Green	8/128, 8/256, 12/256
+Samsung	Galaxy M16 5G	Mint Green, Blush Pink, Thunder Gray	4/128, 6/128, 8/128
+Samsung	Galaxy M36 5G	Orange Haze, Serene Green, Velvet Black	6/128, 8/128
+Samsung	Galaxy F41	Fusion Black, Fusion Blue, Fusion Green	6/64, 6/128
+Samsung	Galaxy F62	Laser Blue, Laser Gray, Laser Green	6/128, 8/128
+Samsung	Galaxy F12	Celestial Black, Sea Green, Sky Blue	4/64, 4/128
+Samsung	Galaxy F22	Denim Black, Denim Blue	4/64, 4/128, 6/128
+Samsung	Galaxy F23 5G	Aqua Blue, Forest Green	4/128, 6/128
+Samsung	Galaxy F13	Nightsky Green, Sunrise Copper, Waterfall Blue	4/64, 4/128
+Samsung	Galaxy F14 5G	B.A.E. Purple, GOAT Green, OMG Black	4/128, 6/128
+Samsung	Galaxy F54 5G	Meteor Blue, Stardust Silver	8/256
+Samsung	Galaxy F15 5G	Ash Black, Groovy Violet, Jazzy Green	4/128, 6/128, 8/128
+Samsung	Galaxy F55 5G	Apricot Crush, Raisin Purple	8/128, 8/256, 12/256
+Samsung	Galaxy F06 5G	Bahama Blue, Lit Violet	4/128, 6/128
+Samsung	Galaxy J1	Black, White, Blue	0.5/4
+Samsung	Galaxy J2	Black, White, Gold	1/8
+Samsung	Galaxy J3 (2016)	Black, White, Gold	1.5/8
+Samsung	Galaxy J5	Black, White, Gold	1.5/8
+Samsung	Galaxy J7	Black, White, Gold	1.5/16
+Samsung	Galaxy J2 Pro	Black, Gold, Silver	1.5/16
+Samsung	Galaxy J4	Black, Gold, Blue	2/16, 2/32
+Samsung	Galaxy J6	Black, Blue, Gold, Lavender	3/32
+Samsung	Galaxy J7 Prime	Black, Gold, Silver	3/32
+Samsung	Galaxy J7 Pro	Black, Gold, Blue	3/64
+Samsung	Galaxy J8	Black, Blue, Gold, Purple	3/32, 4/64
+Samsung	Galaxy On5	Black, White, Gold	1.5/8
+Samsung	Galaxy On7	Black, White, Gold	1.5/8
+Samsung	Galaxy C5	Pink Gold, Light Blue, Gray	4/32, 4/64
+Samsung	Galaxy C7 Pro	Black, Gold, Pink	4/64
+Samsung	Galaxy C9 Pro	Black, Gold, Pink	6/64
+Samsung	Galaxy XCover 4	Black	2/16
+Samsung	Galaxy XCover 6 Pro	Black	6/128
+Samsung	Galaxy Xcover7	Black	6/128
+Xiaomi	Mi 1	Black, White	1/4
+Xiaomi	Mi 2	Blue, White, Pink, Red	2/16, 2/32
+Xiaomi	Mi 3	Gray, White, Black	2/16, 2/64
+Xiaomi	Mi 4	Black, White	3/16, 3/64
+Xiaomi	Mi 4i	White, Gray, Pink, Blue, Yellow	2/16, 2/32
+Xiaomi	Mi 5	Black, White, Gold	3/32, 3/64, 4/128
+Xiaomi	Mi 5s	Silver, Gray, Gold, Rose Gold	3/64, 4/128
+Xiaomi	Mi 5s Plus	Silver, Gray, Gold, Rose Gold	4/64, 6/128
+Xiaomi	Mi 6	Blue, Black, Silver, White	6/64, 6/128
+Xiaomi	Mi Max	Gray, Silver, Gold	2/16, 3/32, 4/128
+Xiaomi	Mi Max 2	Black, Gold	4/64, 4/128
+Xiaomi	Mi Max 3	Black, Gold, Blue	4/64, 6/128
+Xiaomi	Mi Mix	Black, White	4/128, 6/256
+Xiaomi	Mi Mix 2	Black, White	6/64, 6/128, 6/256, 8/128
+Xiaomi	Mi Mix 2S	Black, White	6/64, 6/128, 8/256
+Xiaomi	Mi Mix 3	Onyx Black, Sapphire Blue, Jade Green	6/128, 8/128, 8/256, 10/256
+Xiaomi	Mi 8	Black, Blue, White, Gold	6/64, 6/128, 6/256, 8/256
+Xiaomi	Mi 8 SE	Gray, Blue, Gold, Red	4/64, 6/64
+Xiaomi	Mi 8 Lite	Aurora Blue, Midnight Black, Rose Gold Pink	4/64, 6/128
+Xiaomi	Mi 8 Pro	Transparent Titanium	8/128
+Xiaomi	Mi 9	Piano Black, Lavender Violet, Ocean Blue	6/64, 6/128, 8/128
+Xiaomi	Mi 9 SE	Piano Black, Ocean Blue, Lavender Violet	6/64, 6/128
+Xiaomi	Mi 9T	Carbon Black, Glacier Blue, Flame Red	6/64, 6/128
+Xiaomi	Mi 9T Pro	Carbon Black, Glacier Blue, Flame Red	6/64, 6/128
+Xiaomi	Mi A1	Black, Gold, Rose Gold	4/64
+Xiaomi	Mi A2	Black, Blue, Gold, Rose Gold	4/32, 4/64, 6/128
+Xiaomi	Mi A3	Not just Blue, More than White, Kind of Gray	4/64, 4/128, 6/128
+Xiaomi	Mi Note 10	Midnight Black, Aurora Green, Glacier White	6/128, 8/256
+Xiaomi	Mi 10	Twilight Grey, Coral Green	8/128, 8/256, 12/256
+Xiaomi	Mi 10 Pro	Solstice Gray, Alpine White	8/256, 12/256, 12/512
+Xiaomi	Mi 10 Lite 5G	Aurora Blue, Cosmic Gray, Dream White	6/64, 6/128, 8/256
+Xiaomi	Mi 10T	Cosmic Black, Lunar Silver, Aurora Blue	6/128, 8/128, 8/256
+Xiaomi	Mi 10T Pro	Cosmic Black, Lunar Silver, Aurora Blue	8/128, 8/256
+Xiaomi	Mi 10T Lite	Pearl Gray, Atlantic Blue, Rose Gold Beach	6/64, 6/128
+Xiaomi	Mi 11	Midnight Gray, Horizon Blue, Frost White, Cloud White	8/128, 8/256, 12/256
+Xiaomi	Mi 11 Ultra	Ceramic Black, Ceramic White	8/256, 12/256, 12/512
+Xiaomi	Mi 11 Lite 5G	Truffle Black, Peach Pink, Jazz Blue, Mint Green	6/128, 8/128, 8/256
+Xiaomi	Mi 11i	Cosmic Black, Frosty White	8/128, 8/256
+Xiaomi	Mi 11X Pro	Cosmic Black, Lunar White, Celestial Silver	8/128, 8/256
+Xiaomi	Mi 11T	Meteorite Gray, Celestial Blue, Moonlight White	8/128, 8/256
+Xiaomi	Mi 11T Pro	Meteorite Gray, Celestial Blue, Moonlight White	8/128, 8/256, 12/256
+Xiaomi	Xiaomi 12	Gray, Blue, Purple, Green	8/128, 8/256, 12/256
+Xiaomi	Xiaomi 12 Pro	Gray, Blue, Purple	8/128, 8/256, 12/256
+Xiaomi	Xiaomi 12X	Gray, Blue, Purple	8/128, 8/256
+Xiaomi	Xiaomi 12T	Black, Silver, Blue	8/128, 8/256
+Xiaomi	Xiaomi 12T Pro	Black, Silver, Blue	8/256, 12/256
+Xiaomi	Xiaomi 13	Black, White, Flora Green, Light Blue	8/128, 8/256, 12/256, 12/512
+Xiaomi	Xiaomi 13 Pro	Ceramic Black, Ceramic White, Flora Green	8/128, 12/256, 12/512
+Xiaomi	Xiaomi 13 Lite	Black, Lite Blue, Lite Pink	8/128, 8/256
+Xiaomi	Xiaomi 13T	Alpine Blue, Black, Meadow Green	8/256, 12/256, 12/512
+Xiaomi	Xiaomi 13T Pro	Alpine Blue, Black, Meadow Green	12/256, 12/512, 16/1024
+Xiaomi	Xiaomi 13 Ultra	Black, Olive Green, White	12/256, 12/512, 16/1024
+Xiaomi	Xiaomi 14	Black, White, Jade Green, Pink	12/256, 12/512, 16/1024
+Xiaomi	Xiaomi 14 Ultra	Black, White	12/256, 16/512, 16/1024
+Xiaomi	Xiaomi 14T	Titan Gray, Titan Blue, Titan Black, Lemon Green	12/256, 12/512
+Xiaomi	Xiaomi 14T Pro	Titan Gray, Titan Blue, Titan Black	12/256, 12/512, 12/1024
+Xiaomi	Xiaomi 15	Black, White, Green, Liquid Silver	12/256, 12/512, 16/512, 16/1024
+Xiaomi	Xiaomi 15 Ultra	Black, White, Silver Chrome	12/256, 16/512, 16/1024
+Xiaomi	Xiaomi 15T	Black, Gray, Mocha Gold, Rose Gold	12/256, 12/512
+Xiaomi	Xiaomi 15T Pro	Black, Gray, Mocha Gold	12/256, 12/512, 12/1024
+Xiaomi	Mix Fold	Black, Silver	12/256, 12/512, 16/256, 16/512
+Xiaomi	Mix Fold 2	Black, Gold, Silver	8/256, 12/256, 12/512, 12/1024
+Xiaomi	Mix Fold 3	Black, Gold, Silver	12/256, 16/512, 16/1024
+Xiaomi	Mix Flip	Black, Purple, Green	12/256, 12/512, 16/1024
+Xiaomi	Xiaomi Civi	Pink, Blue, Black	8/128, 8/256, 12/256
+Redmi	Redmi 1S	Black, White, Yellow, Green, Pink	1/8
+Redmi	Redmi 2	White, Black, Pink, Yellow, Green	1/8, 1/16
+Redmi	Redmi 3S	Silver, Gray, Gold	2/16, 3/32
+Redmi	Redmi 4A	Gray, Gold, Rose Gold	2/16, 2/32
+Redmi	Redmi 4	Gray, Gold, Platinum Silver	2/16, 3/32, 4/64
+Redmi	Redmi 5A	Gray, Gold, Rose Gold, Blue	2/16, 3/32
+Redmi	Redmi 5	Black, Gold, Rose Gold, Blue	2/16, 3/32, 4/32
+Redmi	Redmi 6	Black, Gold, Blue, Rose Gold	3/32, 3/64, 4/64
+Redmi	Redmi 6A	Black, Gold, Blue, Rose Gold	2/16, 2/32
+Redmi	Redmi 7	Eclipse Black, Lunar Red, Comet Blue	2/16, 3/32, 3/64, 4/64
+Redmi	Redmi 7A	Matte Black, Matte Blue, Matte Gold	2/16, 2/32
+Redmi	Redmi 8	Onyx Black, Ruby Red, Sapphire Blue	3/32, 4/64
+Redmi	Redmi 8A	Midnight Grey, Sky White, Ocean Blue	2/32, 3/32
+Redmi	Redmi 9	Carbon Gray, Sunset Purple, Ocean Green	3/32, 4/64, 4/128
+Redmi	Redmi 9A	Nature Green, Midnight Black, Sea Blue	2/32, 3/32
+Redmi	Redmi 9C	Midnight Gray, Sunrise Orange, Twilight Blue	2/32, 3/64, 4/128
+Redmi	Redmi 9T	Carbon Gray, Ocean Green, Sunrise Orange, Twilight Blue	4/64, 4/128, 6/128
+Redmi	Redmi 9 Power	Fiery Red, Mighty Black, Blazing Blue, Electric Green	4/64, 4/128
+Redmi	Redmi 10	Carbon Gray, Pebble White, Sea Blue	4/64, 4/128, 6/128
+Redmi	Redmi 10C	Graphite Gray, Mint Green, Ocean Blue	3/64, 4/64, 4/128
+Redmi	Redmi 12	Midnight Black, Polar Silver, Sky Blue	4/128, 6/128, 8/256
+Redmi	Redmi 12C	Graphite Gray, Ocean Blue, Mint Green, Lavender Purple	3/32, 3/64, 4/64, 4/128, 6/128
+Redmi	Redmi 13C	Midnight Black, Navy Blue, Glacier White, Clover Green	4/128, 6/128, 8/256
+Redmi	Redmi 13	Midnight Black, Pearl Pink, Hawaiian Blue, Sandy Gold	6/128, 8/128, 8/256
+Redmi	Redmi 14C	Midnight Black, Dreamy Purple, Starry Blue, Sage Green	4/128, 6/128, 8/256
+Redmi	Redmi A1	Black, Light Green, Light Blue	2/32, 3/32
+Redmi	Redmi A2	Aqua Blue, Classic Black, Sea Green	2/32, 3/64, 4/64
+Redmi	Redmi A3	Midnight Black, Lake Blue, Olive Green	3/64, 4/128, 6/128
+Redmi	Redmi A5	Midnight Black, Sandy Gold, Lake Green, Pearl Gold	3/64, 4/128, 4/64
+Redmi	Redmi Note 1	White, Black, Yellow, Green	1/8
+Redmi	Redmi Note 2	White, Gray	2/16, 2/32
+Redmi	Redmi Note 3	Silver, Dark Gray, Gold	2/16, 3/32
+Redmi	Redmi Note 4	Black, Gold, Dark Blue	2/32, 3/32, 3/64, 4/64
+Redmi	Redmi Note 5	Black, Gold, Rose Gold, Blue	3/32, 4/64
+Redmi	Redmi Note 5 Pro	Black, Gold, Rose Gold, Lake Blue	4/64, 6/64
+Redmi	Redmi Note 6 Pro	Black, Blue, Red, Rose Gold	3/32, 4/64, 6/64
+Redmi	Redmi Note 7	Space Black, Sapphire Blue, Ruby Red, Neptune Blue	3/32, 4/64, 4/128, 6/64
+Redmi	Redmi Note 7 Pro	Space Black, Neptune Blue, Nebula Red	4/64, 4/128, 6/128
+Redmi	Redmi Note 8	Neptune Blue, Space Black, Moonlight White, Cosmic Purple	3/32, 4/64, 4/128, 6/128
+Redmi	Redmi Note 8 Pro	Pearl White, Halo White, Mineral Grey, Forest Green	6/64, 6/128, 8/128
+Redmi	Redmi Note 8T	Starscape Blue, Moonshadow Grey, Moonlight White	3/32, 4/64, 4/128
+Redmi	Redmi Note 9	Forest Green, Polar White, Midnight Grey	3/64, 4/64, 4/128, 6/128
+Redmi	Redmi Note 9 Pro	Aurora Blue, Glacier White, Interstellar Black, Tropical Green	4/64, 4/128, 6/64, 6/128
+Redmi	Redmi Note 9S	Aurora Blue, Glacier White, Interstellar Gray	4/64, 4/128, 6/128
+Redmi	Redmi Note 10	Onyx Gray, Frost White, Aqua Green, Shadow Black	4/64, 4/128, 6/128
+Redmi	Redmi Note 10 Pro	Onyx Gray, Glacier Blue, Gradient Bronze, Dark Night	6/64, 6/128, 8/128, 8/256
+Redmi	Redmi Note 10S	Onyx Gray, Pebble White, Ocean Blue	6/64, 6/128, 8/128
+Redmi	Redmi Note 10T 5G	Metallic Silver, Graphite Black, Lake Blue, Mint Green	4/64, 4/128, 6/128
+Redmi	Redmi Note 11	Graphite Gray, Twilight Blue, Star Blue, Pearl White	4/64, 4/128, 6/128
+Redmi	Redmi Note 11 Pro	Graphite Gray, Polar White, Star Blue, Atlantic Blue	6/64, 6/128, 8/128
+Redmi	Redmi Note 11S	Graphite Gray, Twilight Blue, Pearl White	6/64, 6/128, 8/128
+Redmi	Redmi Note 12	Onyx Gray, Mint Green, Ice Blue, Sunrise Gold	4/64, 4/128, 6/128, 8/128
+Redmi	Redmi Note 12 Pro	Graphite Gray, Polar White, Sky Blue	6/128, 8/128, 8/256
+Redmi	Redmi Note 12 Pro+	Obsidian Black, Glacier Blue, Sky Blue	8/256, 12/256
+Redmi	Redmi Note 13	Midnight Black, Ice Blue, Mint Green, Arctic White	6/128, 8/128, 8/256
+Redmi	Redmi Note 13 Pro	Midnight Black, Aurora Purple, Coral Purple, Ocean Teal	8/128, 8/256, 12/256, 12/512
+Redmi	Redmi Note 13 Pro+	Fusion Black, Fusion Purple, Fusion White	8/256, 12/256, 12/512
+Redmi	Redmi Note 14	Midnight Black, Ocean Blue, Lime Green, Mystic Purple	6/128, 8/128, 8/256
+Redmi	Redmi Note 14 Pro	Midnight Black, Coral Purple, Lavender Purple, Phantom Purple	8/128, 8/256, 12/256, 12/512
+Redmi	Redmi Note 14 Pro+	Midnight Black, Titan Black, Mirror White, Phantom Purple	8/256, 12/256, 12/512
+Redmi	Redmi K20	Carbon Fiber Black, Glacier Blue, Flame Red	6/64, 6/128, 8/256
+Redmi	Redmi K30	Purple Jade, Blue Rhine, Red Mars, Black	6/64, 6/128, 8/128, 8/256
+Redmi	Redmi K40	Black, Silver, Blue, Green	6/128, 8/128, 8/256, 12/256
+Redmi	Redmi K50	Black, Silver, Blue, Green	8/128, 8/256, 12/256
+Redmi	Redmi K60	Black, White, Blue, Green	8/128, 8/256, 12/256, 12/512, 16/512
+Redmi	Redmi K70	Black, White, Blue, Green	12/256, 12/512, 16/256, 16/512, 16/1024
+Poco	Poco F1	Graphite Black, Rosso Red, Steel Blue, Armored Edition	6/64, 6/128, 8/256
+Poco	Poco X2	Atlantis Blue, Matrix Purple, Phoenix Red	6/64, 6/128, 8/256
+Poco	Poco M2 Pro	Out of the Blue, Two Shades of Black, Green and Greener	4/64, 6/64, 6/128
+Poco	Poco X3	Shadow Gray, Cobalt Blue	6/64, 6/128
+Poco	Poco X3 Pro	Phantom Black, Metal Bronze, Frost Blue	6/128, 8/256
+Poco	Poco M3	Cool Blue, Power Black, Poco Yellow	4/64, 4/128, 6/128
+Poco	Poco F3	Night Black, Arctic White, Deep Ocean Blue, Moonlight Silver	6/128, 8/256
+Poco	Poco M4 Pro 5G	Cool Blue, Power Black, Poco Yellow	4/64, 4/128, 6/128, 8/256
+Poco	Poco X4 Pro 5G	Laser Black, Laser Blue, Poco Yellow	6/128, 8/256
+Poco	Poco F4	Night Black, Moonlight Silver, Nebula Green	6/128, 8/128, 8/256, 12/256
+Poco	Poco M5	Power Black, Icy Blue, Poco Yellow	4/64, 4/128, 6/128
+Poco	Poco X5	Wildcat Blue, Supernova Green, Jaguar Black	6/128, 8/256
+Poco	Poco X5 Pro	Astral Black, Horizon Blue, Poco Yellow	6/128, 8/256
+Poco	Poco F5	Carbon Black, Snowstorm White, Electric Blue	8/256, 12/256
+Poco	Poco F5 Pro	Black, White	12/256, 12/512
+Poco	Poco M6 Pro	Forest Green, Power Black, Purple	6/128, 8/256, 12/512
+Poco	Poco X6	Black, Blue, White	8/256, 12/256
+Poco	Poco X6 Pro	Black, Yellow, Gray	8/256, 12/512
+Poco	Poco F6	Black, Green, Titanium	8/256, 12/512
+Poco	Poco F6 Pro	Black, White	12/256, 12/512, 16/1024
+Poco	Poco C40	Power Black, Coral Green, Poco Yellow	3/32, 4/64, 6/64
+Poco	Poco C65	Matte Black, Pastel Blue, Pastel Green	4/128, 6/128, 8/256
+Poco	Poco M7 Pro 5G	Lavender Frost, Lunar Dust, Olive Twilight	6/128, 8/256, 8/512
+Poco	Poco X7	Black, Green, Silver	8/256, 12/512
+Poco	Poco X7 Pro	Black, Green, Yellow	8/256, 12/256, 12/512
+Poco	Poco F7	Cyber Silver, Phantom Black, Frost White	12/256, 12/512
+Poco	Poco F7 Pro	Black, Blue, Silver	12/256, 12/512
+Poco	Poco F7 Ultra	Black, Yellow	12/256, 16/512
+Huawei	Ascend P1	Black, White	1/4
+Huawei	Ascend P6	Black, White, Pink, Gold	2/8, 2/16
+Huawei	Ascend P7	Black, White, Pink	2/16
+Huawei	P8	Titanium Gray, Mystic Champagne, Prestige Gold	3/16, 3/64
+Huawei	P9	Titanium Gray, Mystic Silver, Haze Gold, Prestige Gold, Rose Gold	3/32, 4/32, 4/64
+Huawei	P9 Plus	Quartz Grey, Haze Gold, Mystic Silver	4/64
+Huawei	P10	Dazzling Blue, Graphite Black, Greenery, Rose Gold, Mystic Silver	4/32, 4/64, 4/128, 6/128
+Huawei	P10 Plus	Dazzling Blue, Graphite Black, Greenery, Mystic Silver	4/64, 6/64, 6/128
+Huawei	P20	Twilight, Midnight Blue, Pink Gold, Black	4/64, 4/128
+Huawei	P20 Pro	Twilight, Midnight Blue, Pink Gold, Black	6/64, 6/128, 8/256
+Huawei	P20 Lite	Midnight Black, Klein Blue, Sakura Pink	4/64
+Huawei	P30	Breathing Crystal, Aurora, Amber Sunrise, Pearl White, Black	6/64, 6/128, 8/128
+Huawei	P30 Pro	Breathing Crystal, Aurora, Amber Sunrise, Pearl White, Black	6/128, 8/128, 8/256, 8/512
+Huawei	P30 Lite	Midnight Black, Peacock Blue, Pearl White	4/64, 4/128, 6/256
+Huawei	P40	Black, Silver Frost, Blush Gold, Deep Sea Blue	8/128
+Huawei	P40 Pro	Black, Silver Frost, Blush Gold, Deep Sea Blue, Ice White	8/128, 8/256, 8/512
+Huawei	P40 Pro+	Ceramic White, Ceramic Black	8/512
+Huawei	P40 Lite	Crush Green, Midnight Black, Sakura Pink	6/128
+Huawei	P50 Pro	Golden Black, Cocoa Gold, Pearl White, Charm Pink	8/128, 8/256, 8/512, 12/512
+Huawei	P60 Pro	Rococo Pearl, Black, Emerald	8/256, 8/512, 12/512
+Huawei	Pura 70	Black, White, Purple, Green	12/256, 12/512
+Huawei	Pura 70 Pro	Black, White, Brown, Green	12/256, 12/512, 12/1024
+Huawei	Pura 70 Ultra	Black, Green, Brown	16/512, 16/1024
+Huawei	Pura 80 Pro	Black, White, Gold, Green	12/256, 12/512, 12/1024
+Huawei	Mate 7	Black, White, Gold, Gray	2/16, 3/32
+Huawei	Mate 8	Space Gray, Moonlight Silver, Champagne Gold, Mocha Brown	3/32, 4/64, 4/128
+Huawei	Mate 9	Space Gray, Moonlight Silver, Champagne Gold, Mocha Brown, Ceramic White	4/64, 6/128
+Huawei	Mate 10	Mocha Brown, Champagne Gold, Midnight Blue, Pink Gold	4/64, 6/128
+Huawei	Mate 10 Pro	Titanium Gray, Mocha Brown, Midnight Blue, Pink Gold	4/64, 6/128
+Huawei	Mate 20	Midnight Blue, Twilight, Emerald Green, Black, Pink Gold	4/64, 4/128, 6/128
+Huawei	Mate 20 Pro	Midnight Blue, Twilight, Emerald Green, Black, Pink Gold	6/128, 8/128, 8/256
+Huawei	Mate 20 X	Phantom Silver, Midnight Blue	6/128, 8/256
+Huawei	Mate 30	Space Silver, Emerald Green, Cosmic Purple, Black	6/128, 8/128, 8/256
+Huawei	Mate 30 Pro	Space Silver, Emerald Green, Cosmic Purple, Black	8/128, 8/256, 8/512
+Huawei	Mate 40 Pro	Black, White, Mystic Silver, Yellow	8/256, 8/512, 12/256
+Huawei	Mate 50 Pro	Black, Silver, Orange, Purple	8/256, 8/512
+Huawei	Mate 60 Pro	Black, White, Green, Purple, Red	12/256, 12/512, 12/1024
+Huawei	Mate 70 Pro	Black, White, Green, Blue	12/256, 12/512, 12/1024
+Huawei	Mate X	Interstellar Blue	8/512
+Huawei	Mate Xs	Interstellar Blue	8/512
+Huawei	Mate X2	White, Black, Crystal Blue	8/256, 8/512
+Huawei	Mate X3	Black, White, Purple, Green	12/512, 12/1024
+Huawei	Mate XT	Black, Red	16/256, 16/512, 16/1024
+Huawei	Nova 2	Prestige Gold, Aurora Blue, Black	4/64
+Huawei	Nova 3	Black, Blue, Purple, Gold	4/128, 6/128
+Huawei	Nova 5T	Crush Blue, Midsummer Purple, Black	6/128, 8/128
+Huawei	Nova 7i	Crush Green, Midnight Black, Sakura Pink	8/128
+Huawei	Nova 9	Black, Blue, Gold, Purple	8/128, 8/256
+Huawei	Nova 10	Starry Silver, Mint Green, Black	8/128, 8/256
+Huawei	Nova 11	Black, Green, Gold	8/256, 12/256
+Huawei	Nova 12	Black, White, Green, Pink	8/256, 12/256, 12/512
+Huawei	Nova 13	Black, White, Green, Pink	8/256, 12/256, 12/512
+Huawei	Y6 Prime	Black, Gold, Blue	2/16, 3/32
+Huawei	Y7 Prime	Black, Gold, Blue	3/32, 3/64, 4/64
+Huawei	Y9 Prime	Midnight Black, Emerald Green, Sapphire Blue	4/128
+Huawei	Y9a	Space Silver, Midnight Black, Orange	8/128
+Huawei	Enjoy 20 SE	Black, Blue, Gold	4/64, 4/128
+Huawei	Maimang 11	Black, Silver, Green	8/256
+Honor	Honor 3C	Black, White	1/8
+Honor	Honor 4X	Black, White	2/8
+Honor	Honor 5X	Gray, Silver, Gold	2/16, 3/16
+Honor	Honor 7	Black, Silver, Gold	3/16, 3/64
+Honor	Honor 8	Midnight Black, Sapphire Blue, Pearl White, Sunrise Gold	4/32, 4/64
+Honor	Honor 9	Glacier Gray, Sapphire Blue, Midnight Black	4/64, 6/64, 6/128
+Honor	Honor 10	Phantom Blue, Phantom Green, Midnight Black, Glacier Gray	4/64, 6/64, 6/128
+Honor	Honor 20	Sapphire Blue, Midnight Black, Icelandic Frost	6/128
+Honor	Honor 20 Pro	Phantom Blue, Phantom Black, Phantom Silver	8/256
+Honor	Honor 30	Black, Silver, Green	6/128, 8/128, 8/256
+Honor	Honor 50	Midnight Black, Emerald Green, Frost Crystal	6/128, 8/128, 8/256
+Honor	Honor 70	Black, Silver, Green, Crystal	8/128, 8/256, 12/256
+Honor	Honor 90	Emerald Green, Midnight Black, Diamond Silver	8/256, 12/256, 12/512
+Honor	Honor 200	Black, Green, White	8/256, 12/256, 12/512
+Honor	Honor 200 Pro	Black, Green, White	12/512
+Honor	Honor 400	Black, Gold, Green	8/256, 12/512
+Honor	Honor 400 Pro	Black, Gray, Gold	12/256, 12/512
+Honor	Honor Magic 2	Gradient Blue, Black, Red	6/128, 8/128, 8/256
+Honor	Honor Magic 4 Pro	Black, White, Gold, Cyan	8/256, 12/256, 12/512
+Honor	Honor Magic 5 Pro	Black, Green, Gold	12/256, 12/512, 16/512
+Honor	Honor Magic 6 Pro	Black, Green, Epi Green, White	12/256, 12/512, 16/512, 16/1024
+Honor	Honor Magic 7 Pro	Black, White, Blue, Purple	12/256, 12/512, 16/512, 16/1024
+Honor	Honor Magic V	Black, Gold, Blue	12/256, 12/512
+Honor	Honor Magic V2	Black, Purple, Gold	16/256, 16/512, 16/1024
+Honor	Honor Magic V3	Black, Green, White	12/256, 16/512, 16/1024
+Honor	Honor Magic V5	Black, White, Gold	12/256, 16/512, 16/1024
+Honor	Honor X5	Black, Blue, Green	2/32, 4/64
+Honor	Honor X6	Black, Blue, Green	4/64, 4/128
+Honor	Honor X7	Black, Blue, Green	4/128
+Honor	Honor X8	Black, Blue, Silver	6/128, 8/128
+Honor	Honor X9	Black, Blue, Green	8/128, 8/256
+Honor	Honor X9b	Black, Orange, Green	8/256, 12/256
+Honor	Honor X9c	Black, Blue, Gold	8/256, 12/256, 12/512
+Honor	Honor X7b	Black, Green, Blue	6/128, 8/128, 8/256
+Honor	Honor Play 8T	Black, Blue, Green	4/128, 6/128
+Honor	Honor Play 9T	Black, Blue, Purple	8/128, 8/256
+Honor	Honor View 10	Navy Blue, Midnight Black, Charm Red	6/128
+Honor	Honor View 20	Phantom Blue, Phantom Red, Midnight Black	6/128, 8/256
+Honor	Honor 9X	Midnight Black, Sapphire Blue, Phantom Purple	4/64, 6/128
+Honor	Honor 9A	Midnight Black, Phantom Blue, Ice Green	3/64
+Oppo	Find 5	Black, White	2/16, 2/32
+Oppo	N1	White, Black	2/16, 2/32
+Oppo	R5	Silver, Gold	2/16
+Oppo	R7	Gray, Gold	3/16
+Oppo	F1	Gold, Rose Gold	3/32
+Oppo	F1s	Gold, Rose Gold	3/32, 4/64
+Oppo	R9s	Black, Gold, Rose Gold	4/64
+Oppo	F3	Gold, Black	4/64
+Oppo	F5	Black, Gold, Red	4/32, 6/64
+Oppo	F7	Moonlight Silver, Solar Red, Diamond Black	4/64, 6/128
+Oppo	F9	Twilight Blue, Starry Purple, Sunrise Red	4/64, 6/64
+Oppo	F11	Marble Green, Jewelry White	4/64, 6/128
+Oppo	F11 Pro	Thunder Black, Aurora Green, Waterfall Grey	6/64, 6/128
+Oppo	Reno	Jet Black, Ocean Green	6/128, 8/256
+Oppo	Reno 10x Zoom	Jet Black, Ocean Green	6/128, 8/256
+Oppo	Reno2	Luminous Black, Ocean Blue	8/256
+Oppo	Reno3 Pro	Midnight Black, Auroral Blue, Sky White	8/128, 12/256
+Oppo	Reno4	Galactic Blue, Space Black	8/128, 8/256
+Oppo	Reno5	Silver, Black, Blue	8/128, 8/256
+Oppo	Reno6	Stellar Black, Aurora	8/128, 12/256
+Oppo	Reno7	Cosmic Black, Startrails Blue, Sunset Orange	8/128, 8/256
+Oppo	Reno8	Shimmer Gold, Shimmer Black	8/128, 8/256, 12/256
+Oppo	Reno8 Pro	Glazed Green, Glazed Black	8/256, 12/256
+Oppo	Reno10	Silvery Grey, Ice Blue	8/256
+Oppo	Reno10 Pro	Glossy Purple, Silvery Grey	12/256
+Oppo	Reno10 Pro+	Glossy Purple, Silvery Grey	12/256, 16/512
+Oppo	Reno11	Wave Green, Rock Grey	8/128, 8/256, 12/256
+Oppo	Reno11 Pro	Pearl White, Rock Grey	12/256, 12/512
+Oppo	Reno12	Sunset Peach, Astro Silver, Nebula Silver	8/256, 12/256
+Oppo	Reno12 Pro	Nebula Silver, Space Brown, Sunset Gold	12/256, 12/512
+Oppo	Reno13	Ivory White, Luminous Blue, Midnight Black	8/256, 12/256, 12/512
+Oppo	Reno13 Pro	Graphite Gray, Nebula Silver	12/256, 12/512
+Oppo	Find X	Bordeaux Red, Glacier Blue	8/128, 8/256
+Oppo	Find X2	Black, Ocean	8/128, 12/256
+Oppo	Find X2 Pro	Black, Orange Vegan Leather	12/256, 12/512
+Oppo	Find X3 Pro	Gloss Black, Blue	12/256
+Oppo	Find X5	Black, White	8/256
+Oppo	Find X5 Pro	Glaze Black, Ceramic White	12/256
+Oppo	Find X6 Pro	Cloud Black, Desert Silver Moon, Forest Green	12/256, 16/256, 16/512
+Oppo	Find X7 Ultra	Ocean Blue, Sepia Brown, Tailored Black	12/256, 16/256, 16/512, 16/1024
+Oppo	Find X8	Space Black, Star Grey, Shell Pink, Frost Blue	12/256, 16/512
+Oppo	Find X8 Pro	Space Black, Pearl White	16/512, 16/1024
+Oppo	Find N	White, Black, Purple	8/256, 12/512
+Oppo	Find N2	Moonlight White, Stone Gray, Green	12/256, 16/512
+Oppo	Find N3	Black, Gold, Pink	16/512, 16/1024
+Oppo	Find N5	Satin Black, Misty White, Dusk Purple	12/256, 16/512, 16/1024
+Oppo	A37	Gold, Gray	2/16
+Oppo	A57	Gold, Black, Rose Gold	3/32, 4/64
+Oppo	A5s	Black, Red, Gold	2/32, 3/32
+Oppo	A9 2020	Marine Green, Space Purple, Vanilla Mint	4/128, 8/128
+Oppo	A31	Mystery Black, Fantasy White, Lake Green	4/64, 4/128, 6/128
+Oppo	A52	Twilight Black, Stream White	4/64, 4/128, 6/128
+Oppo	A53	Electric Black, Fairy White, Fancy Blue	4/64, 4/128, 6/128
+Oppo	A74	Prism Black, Midnight Blue, Clear Black	4/64, 6/128, 8/128
+Oppo	A54	Crystal Black, Starry Blue, Fantastic Purple	4/64, 4/128, 6/128
+Oppo	A78	Mist Black, Glowing Blue, Aqua Green	8/128, 8/256
+Oppo	A79	Mist Black, Glowing Green, Purple	8/128, 8/256
+Oppo	A17	Midnight Black, Sunlight Gold, Lake Blue	4/64, 4/128
+Oppo	A18	Glowing Blue, Glowing Black	4/64, 4/128
+Oppo	A38	Glowing Black, Glowing Gold	4/128, 6/128
+Oppo	A58	Dazzling Green, Glowing Black	6/128, 8/128, 8/256
+Oppo	A60	Midnight Purple, Ripple Blue	6/128, 8/128, 8/256
+Oppo	A3 Pro	Starry Purple, Moonlight Purple, Starry Black	6/128, 8/128, 8/256
+Oppo	A5 Pro	Mocha Brown, Feather Blue, Sandy Gold	6/128, 8/128, 8/256
+Oppo	K10	Blue Flame, Black Carbon	6/128, 8/128, 8/256
+Oppo	K11	Moonlight Gray, Jade Green	8/128, 12/256, 12/512
+Oppo	K12	Black, Blue, Gold	8/256, 12/256, 12/512
+Vivo	X1	Black, White	1/16
+Vivo	Xplay3S	Black, Gold	4/32
+Vivo	V1	Black, Gold, Rose Gold	3/32, 4/64
+Vivo	V3 Max	Gold, Rose Gold	4/32
+Vivo	V5	Crown Gold, Matte Black	4/32
+Vivo	V5 Plus	Matte Black, Crown Gold	4/64
+Vivo	V7+	Matte Black, Gold	4/64
+Vivo	V9	Pearl Black, Gold, Sapphire Blue	4/64
+Vivo	V11 Pro	Starry Night, Dazzling Gold	6/64
+Vivo	V15 Pro	Topaz Blue, Ruby Red, Coral Red	6/128, 8/128
+Vivo	V17 Pro	Midnight Ocean, Glacier Ice White	8/128
+Vivo	V20	Midnight Jazz, Sunset Melody, Moonlight Sonata	8/128
+Vivo	V21	Dusk Blue, Sunset Dazzle, Arctic White	8/128, 8/256
+Vivo	V23	Stardust Black, Sunshine Gold	8/128, 12/256
+Vivo	V25	Elegant Black, Diamond Black, Surfing Blue	8/128, 8/256, 12/256
+Vivo	V27	Magic Blue, Noble Black, Flowing Gold	8/128, 8/256, 12/256
+Vivo	V29	Peak Blue, Space Blue, Noble Black, Majestic Green	8/128, 8/256, 12/256
+Vivo	V30	Peacock Green, Classic Black, Andaman Blue	8/128, 8/256, 12/256, 12/512
+Vivo	V40	Ganges Blue, Lotus Purple, Titanium Grey	8/128, 8/256, 12/256, 12/512
+Vivo	V50	Titanium Gray, Rose Red, Starry Blue	8/128, 8/256, 12/256, 12/512
+Vivo	S1	Skyline Blue, Diamond Black, Mystic Gray	4/128, 6/64, 6/128
+Vivo	S12	Black, Blue, Gold	8/128, 8/256, 12/256
+Vivo	S17	Blue, Black, Pink	8/256, 12/256, 12/512
+Vivo	S18	Black, Blue, Green	12/256, 12/512
+Vivo	Y11	Mineral Blue, Agate Red	3/32
+Vivo	Y12	Burgundy Red, Aqua Blue	3/64, 4/64
+Vivo	Y15	Aqua Blue, Burgundy Red, Mineral Blue	4/64
+Vivo	Y20	Dawn White, Obsidian Black, Nebula Blue	3/64, 4/64
+Vivo	Y21	Diamond Glow, Metallic Blue	4/64, 4/128
+Vivo	Y22	Metaverse Green, Starlit Blue, Yellow Green	4/64, 4/128, 6/128
+Vivo	Y27	Burgundy Black, Garden Green, Sea Blue	4/128, 6/128, 8/128
+Vivo	Y28	Glitter Aqua, Breeze Green, Agate Green	4/128, 6/128, 8/128, 8/256
+Vivo	Y36	Meteor Black, Vibrant Gold, Glitter Gold	8/128, 8/256
+Vivo	Y56	Orange Shimmer, Black Engine	8/128
+Vivo	Y100	Metal Black, Twilight Gold, Coral Red	8/128, 8/256
+Vivo	Y200	Jungle Green, Desert Gold	8/128, 8/256
+Vivo	Y300	Titanium Silver, Emerald Green, Elegant Black	8/128, 8/256
+Vivo	T1	Rainbow Fantasy, Starlight Black, Turbo Blue	4/128, 6/128, 8/128
+Vivo	T2	Nitro Blaze, Velocity Wave	6/128, 8/128
+Vivo	T3	Crystal Flake, Cosmic Blue	6/128, 8/128, 8/256
+Vivo	T4	Emerald Blaze, Phantom Grey	8/128, 8/256, 12/256
+Vivo	X50 Pro	Alpha Grey, Cloud White	8/256
+Vivo	X60 Pro	Midnight Black, Shimmer Blue, Midnight Blue	8/128, 12/256
+Vivo	X70 Pro	Cosmic Black, Aurora Dawn	8/128, 12/256
+Vivo	X80	Cosmic Black, Urban Blue	8/128, 12/256
+Vivo	X80 Pro	Cosmic Black, Urban Blue	12/256, 12/512
+Vivo	X90	Breeze Blue, Asteroid Black	8/256, 12/256
+Vivo	X90 Pro	Legend Black, Dawn Gold	12/256, 12/512
+Vivo	X100	Starry Blue, Asteroid Black, Sunset Orange	12/256, 16/256, 16/512
+Vivo	X100 Pro	Asteroid Black, Startrail Blue, Sunset Orange	16/256, 16/512
+Vivo	X100 Ultra	White, Black, Titanium	12/256, 16/512, 16/1024
+Vivo	X200	Cosmic Blue, Natural Green, Titanium Gray	12/256, 12/512, 16/512
+Vivo	X200 Pro	Cosmic Black, Titanium Gray, Natural Green	16/512, 16/1024
+Vivo	X200 FE	Luxury Gray, Amber Yellow	12/256, 16/512
+Vivo	X Fold	Bright Black, Blue	12/256, 12/512
+Vivo	X Fold3 Pro	Celestial Black, Lunar White	16/512
+Vivo	iQOO 3	Quantum Silver, Tornado Black	8/128, 8/256, 12/256
+Vivo	iQOO 7	Solid Ice Blue, Storm Black, Legend	8/128, 12/256
+Vivo	iQOO 9	Alpha, Legend, Phoenix	8/128, 8/256, 12/256
+Vivo	iQOO 12	Alpha, Legend, Track Edition	12/256, 16/512
+Vivo	iQOO Neo 9 Pro	Fiery Red, Conqueror Black	8/256, 12/256
+Realme	Realme 1	Diamond Black, Solar Red, Silver	3/32, 4/64, 6/128
+Realme	Realme 2	Diamond Black, Diamond Red, Diamond Blue	3/32, 4/64
+Realme	Realme 2 Pro	Black Sea, Blue Ocean, Ice Lake	4/64, 6/64, 8/128
+Realme	Realme 3	Dynamic Black, Radiant Blue, Diamond Red	3/32, 3/64, 4/64
+Realme	Realme 3 Pro	Nitro Blue, Lightning Purple, Carbon Gray	4/64, 6/64, 6/128
+Realme	Realme 5	Crystal Blue, Crystal Purple	3/32, 4/64, 4/128
+Realme	Realme 5 Pro	Crystal Green, Sparkling Blue	4/128, 6/64, 8/128
+Realme	Realme X	Polar White, Space Blue	4/64, 8/128
+Realme	Realme X2	Pearl White, Pearl Green, Pearl Blue	4/64, 6/128, 8/128
+Realme	Realme X2 Pro	Neptune Blue, Lunar White	6/64, 8/128, 12/256
+Realme	Realme 6	Comet Blue, Comet White	4/64, 6/64, 8/128
+Realme	Realme 6 Pro	Lightning Blue, Lightning Red	6/64, 6/128, 8/128
+Realme	Realme 7	Mist Blue, Mist White	6/64, 8/128
+Realme	Realme 7 Pro	Mirror Blue, Mirror Silver	6/128, 8/128
+Realme	Realme 8	Cyber Silver, Cyber Black, Punk Black	4/64, 6/128, 8/128
+Realme	Realme 8 Pro	Infinite Blue, Infinite Black, Illuminating Yellow	6/128, 8/128
+Realme	Realme 9	Stargaze White, Sunburst Gold, Meteor Black	4/64, 6/128, 8/128
+Realme	Realme 9 Pro	Midnight Black, Aurora Green, Sunrise Blue	6/128, 8/128
+Realme	Realme 9 Pro+	Midnight Black, Aurora Green, Sunrise Blue	6/128, 8/128, 8/256
+Realme	Realme 10	Clash White, Rush Black	4/128, 8/128, 8/256
+Realme	Realme 10 Pro	Hyperspace Blue, Dark Matter, Nebula Blue	6/128, 8/128, 8/256
+Realme	Realme 10 Pro+	Hyperspace, Dark Matter, Nebula Blue	8/128, 8/256, 12/256
+Realme	Realme 11	Glory Gold, Glory Black	8/128, 8/256
+Realme	Realme 11 Pro	Sunrise Beige, Astral Black, Oasis Green	8/128, 8/256, 12/256
+Realme	Realme 11 Pro+	Sunrise Beige, Astral Black, Oasis Green	8/256, 12/256, 12/512
+Realme	Realme 12	Twilight Purple, Woodland Green	6/128, 8/128, 8/256
+Realme	Realme 12 Pro	Submarine Blue, Navigator Beige	8/128, 8/256, 12/256
+Realme	Realme 12 Pro+	Submarine Blue, Navigator Beige, Explorer Red	8/256, 12/256, 12/512
+Realme	Realme 13	Dark Purple, Speed Green	6/128, 8/128, 8/256
+Realme	Realme 13 Pro	Monet Gold, Monet Purple, Emerald Green	8/128, 8/256, 12/256, 12/512
+Realme	Realme 13 Pro+	Monet Gold, Monet Purple, Emerald Green	8/256, 12/256, 12/512
+Realme	Realme 14 Pro	Pearl White, Suede Grey, Jaipur Blue	8/128, 8/256, 12/256
+Realme	Realme 14 Pro+	Pearl White, Suede Grey, Bikaner Gold	8/256, 12/256, 12/512
+Realme	Realme GT	Racing Yellow, Dashing Blue, Dashing Silver	8/128, 12/256
+Realme	Realme GT Neo 2	Neo Green, Neo Blue, Neo Black	8/128, 8/256, 12/256
+Realme	Realme GT 2 Pro	Paper White, Paper Green, Steel Black	8/128, 8/256, 12/256, 12/512
+Realme	Realme GT 3	Pulse White, Booster Black	16/256, 16/512
+Realme	Realme GT 5 Pro	Red Rock, Bright Moon, Starry Night	12/256, 16/512, 16/1024
+Realme	Realme GT 6	Razor Green, Fluid Silver	8/256, 12/256, 12/512, 16/512
+Realme	Realme GT 7 Pro	Mars Orange, Galaxy Grey	12/256, 16/512
+Realme	Realme Narzo 20	Glory Silver, Victory Blue	4/64, 4/128
+Realme	Realme Narzo 30	Racing Silver, Racing Blue	4/64, 6/128
+Realme	Realme Narzo 50	Speed Black, Speed Blue	4/64, 4/128, 6/128
+Realme	Realme Narzo 60	Mars Orange, Cosmic Blue	6/128, 8/128, 8/256
+Realme	Realme Narzo 70 Pro	Glass Gold, Glass Green	8/128, 8/256
+Realme	Realme C2	Diamond Black, Diamond Blue, Diamond Ruby	2/16, 2/32, 3/32
+Realme	Realme C3	Frozen Blue, Blazing Red, Volcano Grey	3/32, 3/64, 4/64
+Realme	Realme C11	Rich Green, Rich Grey	2/32, 4/64
+Realme	Realme C21Y	Cross Blue, Cross Black	3/32, 4/64
+Realme	Realme C25	Water Blue, Water Grey	4/64, 4/128
+Realme	Realme C35	Glowing Black, Glowing Green	4/64, 4/128
+Realme	Realme C55	Rainforest, Rainy Night, Sunshower	4/64, 6/64, 6/128, 8/256
+Realme	Realme C65	Feather Green, Starlight Purple	4/128, 6/128, 8/128, 8/256
+Realme	Realme Note 50	Sky Blue, Midnight Black	3/64, 4/128
+Realme	Realme P1	Parrot Blue, Phoenix Red	6/128, 8/128, 8/256
+OnePlus	OnePlus One	Sandstone Black, Silk White	3/16, 3/64
+OnePlus	OnePlus 2	Sandstone Black, Silk White	3/16, 4/64
+OnePlus	OnePlus X	Onyx, Ceramic	3/16
+OnePlus	OnePlus 3	Graphite, Soft Gold	6/64
+OnePlus	OnePlus 3T	Gunmetal, Soft Gold	6/64, 6/128
+OnePlus	OnePlus 5	Midnight Black, Slate Gray	6/64, 8/128
+OnePlus	OnePlus 5T	Midnight Black, Lava Red, Sandstone White	6/64, 8/128
+OnePlus	OnePlus 6	Mirror Black, Midnight Black, Silk White	6/64, 8/128, 8/256
+OnePlus	OnePlus 6T	Mirror Black, Midnight Black, Thunder Purple	6/128, 8/128, 8/256
+OnePlus	OnePlus 7	Mirror Gray, Red	6/128, 8/256
+OnePlus	OnePlus 7 Pro	Mirror Gray, Nebula Blue, Almond	6/128, 8/256, 12/256
+OnePlus	OnePlus 7T	Frosted Silver, Glacier Blue	8/128, 8/256
+OnePlus	OnePlus 7T Pro	Haze Blue	8/256
+OnePlus	OnePlus 8	Onyx Black, Glacial Green, Interstellar Glow	8/128, 12/256
+OnePlus	OnePlus 8 Pro	Onyx Black, Glacial Green, Ultramarine Blue	8/128, 12/256
+OnePlus	OnePlus 8T	Aquamarine Green, Lunar Silver	8/128, 12/256
+OnePlus	OnePlus Nord	Blue Marble, Gray Onyx	6/64, 8/128, 12/256
+OnePlus	OnePlus Nord CE	Charcoal Ink, Blue Void, Silver Ray	6/128, 8/128, 12/256
+OnePlus	OnePlus Nord N10	Midnight Ice	6/128
+OnePlus	OnePlus Nord N100	Midnight Frost	4/64
+OnePlus	OnePlus 9	Winter Mist, Arctic Sky, Astral Black	8/128, 12/256
+OnePlus	OnePlus 9 Pro	Morning Mist, Forest Green, Pine Green, Stellar Black	8/128, 12/256
+OnePlus	OnePlus 9R	Lake Blue, Carbon Black	8/128, 12/256
+OnePlus	OnePlus 9RT	Hacker Black, Nano Silver	8/128, 8/256
+OnePlus	OnePlus 10 Pro	Volcanic Black, Emerald Forest	8/128, 8/256, 12/256
+OnePlus	OnePlus 10T	Jade Green, Moonstone Black	8/128, 8/256, 12/256, 16/256
+OnePlus	OnePlus 11	Titan Black, Eternal Green	8/128, 8/256, 16/256
+OnePlus	OnePlus 12	Silky Black, Flowy Emerald, Glacial White	12/256, 16/512, 16/1024
+OnePlus	OnePlus 12R	Iron Gray, Cool Blue	8/128, 8/256, 16/256
+OnePlus	OnePlus 13	Black Eclipse, Arctic Dawn, Midnight Ocean	12/256, 16/512, 24/1024
+OnePlus	OnePlus 13R	Astral Trail, Nebula Noir	12/256, 16/512
+OnePlus	OnePlus Open	Voyager Black, Emerald Dusk	16/512
+OnePlus	OnePlus Nord 2	Blue Haze, Gray Sierra, Green Wood	6/128, 8/128, 12/256
+OnePlus	OnePlus Nord 2T	Jade Fog, Gray Shadow	8/128, 12/256
+OnePlus	OnePlus Nord 3	Misty Green, Tempest Gray	8/128, 8/256, 16/256
+OnePlus	OnePlus Nord 4	Mercurial Silver, Obsidian Midnight, Oasis Green	8/128, 8/256, 12/256, 16/512
+OnePlus	OnePlus Nord CE 2	Bahamas Blue, Gray Mirror	6/128, 8/128
+OnePlus	OnePlus Nord CE 3	Aqua Surge, Grey Shimmer	8/128, 8/256, 12/256
+OnePlus	OnePlus Nord CE 3 Lite	Pastel Lime, Chromatic Gray	8/128, 8/256
+OnePlus	OnePlus Nord CE 4	Celadon Marble, Dark Chrome	8/128, 8/256
+OnePlus	OnePlus Nord CE 4 Lite	Mega Blue, Super Silver	8/128, 8/256
+OnePlus	OnePlus Nord CE 5	Black Infinity, Marble Mist, Nexus Blue	8/128, 8/256, 12/256
+OnePlus	OnePlus Nord 5	Dry Ice, Marble Sands, Phantom Black	8/256, 12/256, 12/512, 16/512
+OnePlus	OnePlus Ace 3	Mica Blue, Star Black	12/256, 16/512
+OnePlus	OnePlus Ace 5 Pro	Black, White, Purple	12/256, 16/512, 24/1024
+OnePlus	OnePlus 15	Absolute Black, Infinite Blue, Sand Dune	12/256, 16/512, 16/1024
+Google	Nexus One	Black	0.512/0.512
+Google	Nexus S	Black	0.512/16
+Google	Galaxy Nexus	Black, White	1/16, 1/32
+Google	Nexus 4	Black, White	2/8, 2/16
+Google	Nexus 5	Black, White, Red	2/16, 2/32
+Google	Nexus 6	Midnight Blue, Cloud White	3/32, 3/64
+Google	Nexus 5X	Carbon, Quartz, Ice	2/16, 2/32
+Google	Nexus 6P	Graphite, Aluminum, Frost, Gold	3/32, 3/64, 3/128
+Google	Pixel	Quite Black, Very Silver, Really Blue	4/32, 4/128
+Google	Pixel XL	Quite Black, Very Silver, Really Blue	4/32, 4/128
+Google	Pixel 2	Just Black, Clearly White, Kinda Blue	4/64, 4/128
+Google	Pixel 2 XL	Just Black, Black & White	4/64, 4/128
+Google	Pixel 3	Just Black, Clearly White, Not Pink	4/64, 4/128
+Google	Pixel 3 XL	Just Black, Clearly White, Not Pink	4/64, 4/128
+Google	Pixel 3a	Just Black, Clearly White, Purple-ish	4/64
+Google	Pixel 3a XL	Just Black, Clearly White, Purple-ish	4/64
+Google	Pixel 4	Just Black, Clearly White, Oh So Orange	6/64, 6/128
+Google	Pixel 4 XL	Just Black, Clearly White, Oh So Orange	6/64, 6/128
+Google	Pixel 4a	Just Black	6/128
+Google	Pixel 4a (5G)	Just Black	6/128
+Google	Pixel 5	Just Black, Sorta Sage	8/128
+Google	Pixel 5a	Mostly Black	6/128
+Google	Pixel 6	Stormy Black, Kinda Coral, Sorta Seafoam	8/128, 8/256
+Google	Pixel 6 Pro	Stormy Black, Cloudy White, Sorta Sunny	12/128, 12/256, 12/512
+Google	Pixel 6a	Chalk, Charcoal, Sage	6/128
+Google	Pixel 7	Obsidian, Snow, Lemongrass	8/128, 8/256
+Google	Pixel 7 Pro	Obsidian, Snow, Hazel	12/128, 12/256, 12/512
+Google	Pixel 7a	Charcoal, Snow, Sea, Coral	8/128
+Google	Pixel Fold	Obsidian, Porcelain	12/256, 12/512
+Google	Pixel 8	Obsidian, Hazel, Rose, Mint	8/128, 8/256
+Google	Pixel 8 Pro	Obsidian, Porcelain, Bay, Mint	12/128, 12/256, 12/512, 12/1024
+Google	Pixel 8a	Obsidian, Porcelain, Bay, Aloe	8/128, 8/256
+Google	Pixel 9	Obsidian, Porcelain, Wintergreen, Peony	12/128, 12/256
+Google	Pixel 9 Pro	Obsidian, Porcelain, Hazel, Rose Quartz	16/128, 16/256, 16/512, 16/1024
+Google	Pixel 9 Pro XL	Obsidian, Porcelain, Hazel, Rose Quartz	16/128, 16/256, 16/512, 16/1024
+Google	Pixel 9 Pro Fold	Obsidian, Porcelain	16/256, 16/512
+Google	Pixel 9a	Obsidian, Porcelain, Iris, Peony	8/128, 8/256
+Google	Pixel 10	Obsidian, Frost, Indigo, Lemongrass	12/128, 12/256
+Google	Pixel 10 Pro	Obsidian, Moonstone, Jade, Porcelain	16/128, 16/256, 16/512, 16/1024
+Google	Pixel 10 Pro XL	Obsidian, Moonstone, Jade, Porcelain	16/256, 16/512, 16/1024
+Google	Pixel 10 Pro Fold	Moonstone, Jade	16/256, 16/512, 16/1024
+Motorola	Droid	Black	0.256/0.512
+Motorola	Droid X	Black	0.512/8
+Motorola	Droid RAZR	Black	1/16
+Motorola	Moto X (1st gen)	Black, White, Bamboo, Custom	2/16, 2/32
+Motorola	Moto G (1st gen)	Black, White	1/8, 1/16
+Motorola	Moto E (1st gen)	Black, White	1/4
+Motorola	Moto X (2nd gen)	Black, White, Bamboo	2/16, 2/32
+Motorola	Moto G (2nd gen)	Black, White	1/8, 1/16
+Motorola	Moto G (3rd gen)	Black, White	1/8, 2/16
+Motorola	Moto X Style	Black, White, Custom	3/16, 3/32, 3/64
+Motorola	Moto G4	Black, White	2/16, 2/32, 4/64
+Motorola	Moto G4 Plus	Black, White	2/16, 2/32, 4/64
+Motorola	Moto Z	Black, Lunar Gray, Fine Gold	4/32, 4/64
+Motorola	Moto G5	Lunar Gray, Fine Gold	2/16, 3/16
+Motorola	Moto G5 Plus	Lunar Gray, Fine Gold	2/32, 3/32, 4/64
+Motorola	Moto G6	Deep Indigo, Silver, Gold	3/32, 4/64
+Motorola	Moto G6 Plus	Deep Indigo, Nimbus, Silver	4/64, 6/64
+Motorola	Moto Z3 Play	Deep Indigo, Ceramic Black	4/64, 6/128
+Motorola	Moto G7	Ceramic Black, Clear White	4/64
+Motorola	Moto G7 Plus	Viva Red, Deep Indigo	4/64
+Motorola	Moto G8 Plus	Cosmic Blue, Crystal Pink	4/64
+Motorola	Moto G Power (2020)	Smoke Black, Flash Gray	4/64
+Motorola	Moto G9 Plus	Rose Gold, Indigo Blue	4/128, 6/128
+Motorola	Moto G Stylus (2021)	Aqua Teal, Cosmic Emerald	4/128
+Motorola	Moto G30	Dark Pearl, Pastel Sky	4/64, 4/128, 6/128
+Motorola	Moto G60	Dynamic Gray, Moonlight Gray, Frosted Champagne	6/128
+Motorola	Moto G71 5G	Arctic Blue, Iron Black, Neptune Green	6/128
+Motorola	Moto G82 5G	Meteorite Gray, White Lily	6/128, 8/128
+Motorola	Moto G73 5G	Midnight Blue, Lucent White	8/128, 8/256
+Motorola	Moto G84 5G	Midnight Blue, Viva Magenta, Marshmallow Blue	8/256, 12/256
+Motorola	Moto G54 5G	Midnight Blue, Pearl Blue, Mint Green	8/128, 8/256, 12/256
+Motorola	Moto G34 5G	Charcoal Black, Ice Blue, Ocean Green	4/128, 8/128, 8/256
+Motorola	Moto G04	Concord Black, Sea Green, Sunrise Orange	4/64, 4/128, 8/128
+Motorola	Moto G24 Power	Glacier Blue, Ink Blue, Matte Charcoal	4/128, 8/128, 8/256
+Motorola	Moto G85 5G	Cobalt Blue, Olive Green, Urban Grey	8/128, 8/256, 12/256
+Motorola	Moto G75 5G	Aqua Blue, Charcoal Gray, Succulent Green	8/128, 8/256
+Motorola	Moto G15	Gravel Gray, Sage Green, Blue	4/128, 8/256
+Motorola	Moto G Power 5G (2025)	Midnight Blue, Dusty Rose	8/128, 8/256
+Motorola	Moto E7	Coral Red, Aqua Blue, Mineral Gray	2/32, 4/64
+Motorola	Moto E13	Aurora Green, Cosmic Black, Creamy White	2/64, 4/64
+Motorola	Moto E22	Astro Black, Crystal Blue	3/32, 4/64
+Motorola	Moto Edge	Solar Black, Midnight Magenta	4/128, 6/128
+Motorola	Moto Edge 20	Frosted Pearl, Midnight Blue	6/128, 8/128
+Motorola	Moto Edge 30	Meteor Gray, Aurora Green	6/128, 8/128, 8/256
+Motorola	Moto Edge 30 Ultra	Starlight White, Interstellar Black	12/256
+Motorola	Moto Edge 40	Eclipse Black, Lunar Blue, Viva Magenta	8/256
+Motorola	Moto Edge 40 Neo	Black Beauty, Caneel Bay, Soothing Sea	8/128, 12/256
+Motorola	Moto Edge 50 Pro	Black Beauty, Moonlight Pearl, Luxe Lavender	8/256, 12/256, 12/512
+Motorola	Moto Edge 50 Fusion	Forest Blue, Hot Pink, Marshmallow Blue	8/128, 8/256, 12/256
+Motorola	Moto Edge 50 Ultra	Forest Grey, Peach Fuzz, Nordic Wood	12/512, 16/1024
+Motorola	Moto Edge 60 Pro	Pantone Shadow, Pantone Sparkling Grape	8/256, 12/256, 12/512
+Motorola	Motorola Edge+ (2023)	Interstellar Black	8/256, 12/512
+Motorola	Razr (2019)	Noir Black, Blush Gold	6/128
+Motorola	Razr 5G	Polished Graphite, Liquid Mercury, Blush Gold	8/256
+Motorola	Razr 40	Sage Green, Summer Lilac, Vanilla Cream	8/256
+Motorola	Razr 40 Ultra	Infinite Black, Glacier Blue, Viva Magenta	8/256, 8/512
+Motorola	Razr 50	Koala Gray, Beach Sand, Spritz Orange	8/256
+Motorola	Razr 50 Ultra	Midnight Blue, Spring Green, Peach Fuzz	12/256, 12/512
+Motorola	Razr 60	Gibraltar Sea, Parfait Pink, Lightest Sky	8/256
+Motorola	Razr 60 Ultra	Rio Red, Mountain Trail, Scarab	16/512
+Motorola	Moto G100	Iridescent Sky, Slate Gray	8/128, 8/256
+Motorola	Moto G200 5G	Stellar Blue, Glacial Green	8/128, 8/256
+Motorola	Moto G Play (2023)	Navy Blue	3/32, 4/64
+Nokia	Nokia N95	Silver, Black	0.128/0.16
+Nokia	Nokia N97	Black, White	0.128/32
+Nokia	Nokia N8	Dark Gray, Silver White, Orange, Blue, Green	0.256/16
+Nokia	Nokia Lumia 800	Black, Cyan, Magenta	0.512/16
+Nokia	Nokia Lumia 920	Black, White, Red, Yellow, Gray	1/32
+Nokia	Nokia Lumia 1020	Black, White, Yellow	2/32, 2/64
+Nokia	Nokia Lumia 520	Black, White, Red, Yellow, Cyan	0.512/8
+Nokia	Nokia Lumia 1520	Black, White, Red, Yellow	2/16, 2/32
+Nokia	Nokia X	Black, White, Green, Yellow, Red, Cyan	0.512/4
+Nokia	Nokia 1	Warm Red, Dark Blue	1/8
+Nokia	Nokia 2	Pewter, White	1/8
+Nokia	Nokia 3	Silver White, Tempered Blue, Copper White, Matte Black	2/16
+Nokia	Nokia 5	Matte Black, Tempered Blue, Silver, Copper	2/16
+Nokia	Nokia 6 (2017)	Matte Black, Silver, Tempered Blue, Copper, Arte Black	3/32, 4/64
+Nokia	Nokia 8	Polished Blue, Tempered Blue, Steel, Polished Copper	4/64
+Nokia	Nokia 6.1	Black, White, Blue, Copper	3/32, 4/64
+Nokia	Nokia 7 Plus	Black, White	4/64
+Nokia	Nokia 8 Sirocco	Black, Gray	6/128
+Nokia	Nokia 5.1	Black, White, Copper, Blue	2/16, 3/32
+Nokia	Nokia 3.1	Black, White, Blue, Copper	2/16, 3/32
+Nokia	Nokia 6.2	Ceramic Black, Ice	3/32, 4/64, 4/128, 6/128
+Nokia	Nokia 7.2	Charcoal, Cyan Green, Ice	4/64, 6/128
+Nokia	Nokia 8.1	Steel, Iron, Blue	4/64, 4/128, 6/128
+Nokia	Nokia 9 PureView	Midnight Blue	6/128
+Nokia	Nokia 2.2	Black, Steel, Tungsten Black	2/16, 3/32
+Nokia	Nokia 3.2	Black, Steel, Tungsten Black	2/16, 3/32
+Nokia	Nokia 4.2	Black, Pink Sand	3/32
+Nokia	Nokia 1 Plus	Blue, Red, Black	1/8
+Nokia	Nokia 5.3	Charcoal, Cyan, Sand	3/64, 4/64, 6/64
+Nokia	Nokia 5.4	Polar Night, Dusk	4/64, 4/128, 6/64
+Nokia	Nokia 3.4	Charcoal, Dusk, Fjord	3/32, 3/64, 4/64
+Nokia	Nokia 2.4	Charcoal, Dusk, Fjord	2/32, 3/64
+Nokia	Nokia 8.3 5G	Polar Night	6/64, 8/128, 8/256
+Nokia	Nokia G10	Night, Dusk	3/32, 4/64
+Nokia	Nokia G20	Night, Glacier	4/64, 4/128, 6/128
+Nokia	Nokia G21	Nordic Blue, Dusk	4/64, 4/128, 6/128
+Nokia	Nokia G50	Midnight Sun, Ice	4/64, 4/128
+Nokia	Nokia G60 5G	Black, Ice	4/64, 6/128
+Nokia	Nokia X10	Forest, Snow	6/64, 6/128
+Nokia	Nokia X20	Midnight Sun, Nordic Blue	6/128, 8/128, 8/256
+Nokia	Nokia XR20	Granite, Ultra Blue	4/64, 6/128
+Nokia	Nokia C01 Plus	Blue, Purple	1/16, 2/16
+Nokia	Nokia C30	Green, White	2/32, 3/32, 3/64
+Nokia	Nokia C21 Plus	Warm Gray, Dark Cyan	2/32, 3/32
+Nokia	Nokia C32	Charcoal, Beach Pink, Mint	3/64, 4/64, 4/128
+Sony	Xperia X10	Black, White	0.384/1
+Sony	Xperia Arc	Midnight Blue, Misty Silver, Sakura Pink	0.512/1
+Sony	Xperia S	White, Black, Red	1/32
+Sony	Xperia Z	Black, White, Purple	2/16
+Sony	Xperia Z1	Black, White, Purple	2/16
+Sony	Xperia Z2	Black, White, Purple	3/16
+Sony	Xperia Z3	Black, White, Copper, Silver Green	3/16, 3/32
+Sony	Xperia Z3 Compact	Black, White, Orange, Green	2/16
+Sony	Xperia Z5	Black, White, Gold, Green	3/32
+Sony	Xperia Z5 Premium	Chrome, Gold, Black	3/32
+Sony	Xperia X	Black, White, Lime Gold, Rose Gold	3/32, 3/64
+Sony	Xperia XA	Black, White, Lime Gold, Rose Gold	2/16
+Sony	Xperia XZ	Forest Blue, Platinum, Mineral Black	3/32, 3/64
+Sony	Xperia XZ Premium	Luminous Chrome, Deepsea Black	4/64
+Sony	Xperia XZ1	Warm Silver, Moonlit Blue, Black, Venus Pink	4/64
+Sony	Xperia XZ2	Liquid Silver, Liquid Black, Deep Green, Ash Pink	4/64, 6/64
+Sony	Xperia XZ3	Black, White Silver, Forest Green, Bordeaux Red	4/64, 6/64
+Sony	Xperia 1	Black, Grey, Purple	6/64, 6/128
+Sony	Xperia 5	Black, Blue, Red, Grey	6/64, 6/128
+Sony	Xperia 10	Black, Silver, Navy, Pink	3/32, 4/64, 6/64
+Sony	Xperia 1 II	Black, Purple, White	8/256, 12/256
+Sony	Xperia 5 II	Black, Grey, Pink, Blue	8/128, 8/256
+Sony	Xperia 10 II	Black, White, Blue, Mint	4/64, 4/128
+Sony	Xperia 1 III	Frosted Black, Frosted Grey, Frosted Purple	12/256, 12/512
+Sony	Xperia 5 III	Black, Green, Pink, Frosted Silver	8/128, 8/256
+Sony	Xperia 10 III	Black, White, Blue, Pink	6/128
+Sony	Xperia Pro-I	Frosted Black	12/512
+Sony	Xperia 1 IV	Black, White, Purple	12/256, 12/512
+Sony	Xperia 5 IV	Black, Green, Ecru White	8/128, 8/256
+Sony	Xperia 10 IV	Black, White, Mint, Lavender	6/128
+Sony	Xperia 1 V	Black, Khaki Green, Platinum Silver	12/256, 12/512
+Sony	Xperia 5 V	Black, Blue, Platinum Silver	8/128, 8/256
+Sony	Xperia 10 V	Black, White, Lavender, Sage Green	6/128
+Sony	Xperia 1 VI	Black, Platinum Silver, Khaki Green, Scarlet	12/256, 12/512, 16/512
+Sony	Xperia 10 VI	Black, White, Blue	6/128
+Sony	Xperia 1 VII	Slate Black, Orchid Purple, Moss Green	12/256, 16/512
+LG	Optimus One	Black, White	0.512/0.17
+LG	Optimus 2X	Black	0.512/8
+LG	G2	Black, White	2/16, 2/32
+LG	G3	Metallic Black, Silk White, Shine Gold, Moon Violet	2/16, 3/32
+LG	G4	Leather Black, Leather Brown, Metallic Gray, Ceramic White	3/32
+LG	G5	Silver, Titan, Gold, Pink	4/32
+LG	G6	Astro Black, Ice Platinum, Mystic White	4/32, 4/64
+LG	V10	Space Black, Luxe White, Ocean Blue	4/64
+LG	V20	Titan, Silver, Pink	4/64
+LG	V30	Aurora Black, Moroccan Blue, Lavender Violet	4/64, 4/128
+LG	G7 ThinQ	Aurora Black, Platinum Gray, Moroccan Blue, Raspberry Rose	4/64, 6/128
+LG	V40 ThinQ	Aurora Black, Platinum Gray, Moroccan Blue, Carmine Red	6/64, 6/128
+LG	G8 ThinQ	Aurora Black, Platinum Gray, Carmine Red, Moroccan Blue	6/128
+LG	V50 ThinQ	Aurora Black, Astro Blue, Platinum Gray	6/128
+LG	V60 ThinQ	Classy Blue, Classy White	8/128, 8/256
+LG	Velvet	Aurora Gray, Aurora White, Aurora Green, Illusion Sunset	6/128, 8/128
+LG	Wing	Aurora Gray, Illusion Sky	8/128, 8/256
+LG	Q6	Astro Black, Ice Platinum, Mystic White	3/32
+LG	K10	Black, White, Gold	1.5/16, 2/16
+LG	Stylo 6	Gray, White	3/64
+LG	K51	Titan, Silver	3/32
+HTC	HTC Dream	Black, White, Bronze	0.192/0.256
+HTC	HTC Desire	Black, Brown	0.576/0.512
+HTC	HTC Sensation	Black, White	0.768/1
+HTC	HTC One X	Gray, White, Red	1/32, 1/64
+HTC	HTC One (M7)	Silver, Black, Red, Blue	2/32, 2/64
+HTC	HTC One (M8)	Gunmetal Gray, Silver, Gold, Rose Gold	2/16, 2/32
+HTC	HTC One M9	Gunmetal Gray, Gold on Silver, Gold on Gold, Rose Gold	3/32
+HTC	HTC 10	Carbon Gray, Glacier Silver, Topaz Gold, Camellia Red	4/32, 4/64
+HTC	HTC U11	Brilliant Black, Amazing Silver, Sapphire Blue, Solar Red	4/64, 6/128
+HTC	HTC U12+	Translucent Blue, Ceramic Black, Flame Red	6/64, 6/128
+HTC	HTC Desire 12	Cool Black, Warm Silver	2/16, 3/32
+HTC	HTC Desire 20 Pro	Marine Blue, Royal Blue	6/128
+HTC	HTC Desire 21 Pro 5G	Black, Purple	8/128
+HTC	HTC U23 Pro	Snow White, Coffee Black, Caffeine	8/256, 12/256
+HTC	HTC Wildfire E	Black, Blue, Orange	3/32, 4/64
+HTC	HTC Exodus 1	Black	6/128
+HTC	HTC U Ultra	Brilliant Black, Ice White, Cosmetic Pink, Sapphire Blue	4/64
+HTC	HTC One A9	Opal Silver, Carbon Gray, Topaz Gold, Deep Garnet	2/16, 3/32
+Asus	ZenFone 2	Black, White, Red, Gold, Gray	2/16, 4/32, 4/64, 4/128
+Asus	ZenFone 3	Sapphire Black, Aqua Blue, Shimmer Gold, Pearl White	3/32, 3/64, 4/64
+Asus	ZenFone 4	Midnight Black, Moonlight White, Rose Pink	4/64, 6/64
+Asus	ZenFone 5Z	Meteor Silver, Midnight Blue	6/64, 6/128, 8/256
+Asus	ZenFone Max Pro M1	Deep Sea Black, Cosmic Gold	3/32, 4/64, 6/64
+Asus	ZenFone 6	Midnight Black, Twilight Silver	6/64, 6/128, 6/256, 8/256
+Asus	ZenFone 7	Aurora Black, Pastel White	6/128, 8/128, 8/256
+Asus	ZenFone 8	Obsidian Black, Horizon Silver	8/128, 8/256, 16/256
+Asus	ZenFone 9	Midnight Black, Moonlight White, Sunset Red, Starry Blue	8/128, 8/256, 16/256
+Asus	ZenFone 10	Midnight Black, Comet White, Aurora Green, Eclipse Red, Starry Blue	8/128, 8/256, 16/256, 16/512
+Asus	ZenFone 11 Ultra	Eternal Black, Misty Grey, Desert Sand, Skyline Blue	12/256, 16/512
+Asus	ZenFone 12 Ultra	Ebony Black, Sage Green, Sky Blue	12/256, 16/512
+Asus	ROG Phone	Black	8/128, 8/512
+Asus	ROG Phone II	Matte Black, Glossy Black	8/128, 12/512, 12/1024
+Asus	ROG Phone 3	Black Glare, Storm White	8/128, 12/256, 16/512
+Asus	ROG Phone 5	Phantom Black, Storm White	8/128, 12/256, 16/256, 18/512
+Asus	ROG Phone 6	Phantom Black, Storm White	12/256, 16/512, 18/512
+Asus	ROG Phone 7	Phantom Black, Storm White	12/256, 16/512
+Asus	ROG Phone 8 Pro	Phantom Black	16/512, 24/1024
+Asus	ROG Phone 9 Pro	Phantom Black	16/512, 24/1024
+Infinix	Infinix Hot 4	Gold, Gray	2/16
+Infinix	Infinix Hot S3	Gold, Gray, Blue	3/32
+Infinix	Infinix Note 5	Black, Gold, Blue	3/32, 4/64
+Infinix	Infinix Hot 8	Black, Quetzal Cyan, Aqua Blue	2/32, 3/64, 4/64
+Infinix	Infinix Note 8	Black, Silver, Blue	6/128
+Infinix	Infinix Hot 10	Black, Blue, Green	4/64, 4/128
+Infinix	Infinix Hot 11	Black, Blue, Green	4/64, 4/128
+Infinix	Infinix Note 11	Black, Blue, Green	4/64, 6/128
+Infinix	Infinix Zero X Pro	Nebula Black, Forest Green	8/128
+Infinix	Infinix Hot 30	Black, Blue, Green	4/128, 8/128
+Infinix	Infinix Note 30	Interstellar Blue, Magic Black, Sunset Gold	8/128, 8/256
+Infinix	Infinix Zero 30 5G	Fantasy Blue, Golden Hour	8/256, 12/256
+Infinix	Infinix Hot 40 Pro	Starlit Black, Palm Blue, Horizon Gold	8/128, 8/256
+Infinix	Infinix Note 40 Pro	Vintage Green, Titan Gold, Obsidian Black	8/256, 12/256
+Tecno	Tecno Camon 12	Black, Blue, Gold	4/64
+Tecno	Tecno Spark 4	Black, Blue, Gold	2/32, 3/32
+Tecno	Tecno Spark 6 Go	Aqua Blue, Ice Jadeite, Mist Grey	2/32, 3/64, 4/64
+Tecno	Tecno Spark 7	Magnet Black, Spruce Green	2/32, 3/64, 4/64
+Tecno	Tecno Spark 8	Atlantic Blue, Turquoise Cyan, Iris Purple	2/32, 4/64, 4/128
+Tecno	Tecno Spark 10	Meta Black, Meta White, Pearl White	4/128, 8/128, 8/256
+Tecno	Tecno Spark 20	Gravity Black, Magic Skin Green, Neon Gold	4/128, 8/128, 8/256
+Tecno	Tecno Camon 18	Ceramic Black, Dawn Blue, Gold	4/128, 6/128, 8/128
+Tecno	Tecno Camon 19	Eco Black, Sea Salt White, Cosmic Shine	4/64, 6/128, 8/128
+Tecno	Tecno Camon 20 Pro	Serenity Blue, Predawn Black	8/128, 8/256
+Tecno	Tecno Camon 30 Pro	Basaltic Dark, Alpine Frost	12/256
+Tecno	Tecno Phantom X	Starry Blue, Stargaze White	8/256
+Tecno	Tecno Phantom X2 Pro	Stellar Grey, Mars Orange	12/256
+Tecno	Tecno Pova 5	Amber Gold, Hurricane Blue, Mystic Silver	4/128, 8/128, 8/256
+Nothing	Nothing Phone (1)	Black, White	8/128, 8/256, 12/256
+Nothing	Nothing Phone (2)	Dark Gray, White	8/128, 8/256, 12/256, 12/512
+Nothing	Nothing Phone (2a)	Black, White, Milk, Blue	8/128, 8/256, 12/256
+Nothing	Nothing Phone (2a) Plus	Black, Gray	12/256
+Nothing	Nothing Phone (3a)	Black, White, Blue	8/128, 8/256, 12/256
+Nothing	Nothing Phone (3a) Pro	Black, Gray	8/128, 8/256, 12/256
+Nothing	Nothing Phone (3)	Black, White	12/256, 16/512
+Nothing	CMF Phone 1	Black, Blue, Light Green, Orange	6/128, 8/128, 8/256
+Nothing	CMF Phone 2 Pro	Black, White, Light Green, Orange	8/128, 8/256
+BlackBerry	BlackBerry Z10	Black, White	2/16
+BlackBerry	BlackBerry Q10	Black, White	2/16
+BlackBerry	BlackBerry Passport	Black, White	3/32
+BlackBerry	BlackBerry Priv	Black	3/32
+BlackBerry	BlackBerry KEY2	Black, Silver	6/64, 6/128

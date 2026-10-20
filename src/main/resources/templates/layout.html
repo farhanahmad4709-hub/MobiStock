@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${pageTitle != null ? pageTitle + ' - MobiStock' : 'MobiStock'}">MobiStock</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    <link href="/css/style.css?v=11" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar d-flex flex-column p-3 text-white">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <i class="bi bi-phone fs-4 me-2"></i>
+            <span class="fs-4">MobiStock</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="/" class="nav-link text-white">
+                    <i class="bi bi-grid-1x2-fill me-2"></i> Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="/phones" class="nav-link text-white">
+                    <i class="bi bi-phone me-2"></i> Phones
+                </a>
+            </li>
+            <li>
+                <a href="/sales/new" class="nav-link text-white">
+                    <i class="bi bi-cart-plus me-2"></i> New Sale
+                </a>
+            </li>
+            <li>
+                <a href="/sales" class="nav-link text-white">
+                    <i class="bi bi-receipt me-2"></i> Sales History
+                </a>
+            </li>
+            <li>
+                <a href="/reports" class="nav-link text-white">
+                    <i class="bi bi-graph-up me-2"></i> Reports
+                </a>
+            </li>
+            <li>
+                <a href="/backup" class="nav-link text-white">
+                    <i class="bi bi-cloud-arrow-up me-2"></i> Backup & Recovery
+                </a>
+            </li>
+            <li sec:authorize="hasRole('ADMIN')">
+                <a href="/admin" class="nav-link text-white">
+                    <i class="bi bi-gear me-2"></i> Admin
+                </a>
+            </li>
+        </ul>
+        <hr>
+        <div class="dropdown">
+            <div class="d-flex align-items-center text-white text-decoration-none">
+                <div class="bg-primary rounded-circle p-2 me-2 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+                    <i class="bi bi-person-fill text-white fs-5"></i>
+                </div>
+                <div class="d-flex flex-column">
+                    <strong sec:authentication="name" class="text-capitalize text-white">User</strong>
+                    <span class="badge badge-soft-primary px-2 py-0" style="font-size: 0.7rem; width: fit-content;" th:text="${#strings.toUpperCase(#strings.replace(#authentication.principal.authorities[0].authority, 'ROLE_', ''))}">ROLE</span>
+                </div>
+            </div>
+            <form th:action="@{/logout}" method="post" class="mt-2">
+                <button type="submit" class="btn btn-outline-light w-100 btn-sm">Logout</button>
+            </form>
+        </div>
+    </div>
+    <div class="content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light mb-4 px-4 sticky-top">
+            <div class="container-fluid px-0">
+                <h4 class="mb-0 fw-bold text-dark" th:text="${pageTitle} ?: 'MobiStock'">MobiStock</h4>
+                <div class="d-flex ms-auto align-items-center gap-2">
+                    <form th:action="@{/backup/create}" method="post" class="d-inline" title="Create instant database backup">
+                        <button type="submit" class="btn btn-sm btn-outline-primary shadow-sm" onclick="this.innerHTML='<span class=\'spinner-border spinner-border-sm me-1\'></span> Backing up...';">
+                            <i class="bi bi-shield-check text-primary"></i> Backup Now
+                        </button>
+                    </form>
+                    <a href="/backup" class="btn btn-sm btn-light border text-muted shadow-sm" title="View Backup & Recovery Dashboard">
+                        <i class="bi bi-cloud-arrow-up"></i>
+                    </a>
+                    <span class="text-muted small ms-2 d-none d-md-inline" th:text="${#calendars.format(#calendars.createNow(), 'dd MMM yyyy, HH:mm')}">Date Time</span>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <!-- Global Flash Alerts -->
+            <div th:if="${success}" class="alert alert-success alert-dismissible fade show shadow-sm border-0 d-flex align-items-center mb-4" role="alert" style="border-left: 4px solid #10b981 !important;">
+                <i class="bi bi-check-circle-fill fs-5 text-success me-2"></i>
+                <div class="flex-grow-1" th:text="${success}">Success message</div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div th:if="${error}" class="alert alert-danger alert-dismissible fade show shadow-sm border-0 d-flex align-items-center mb-4" role="alert" style="border-left: 4px solid #ef4444 !important;">
+                <i class="bi bi-exclamation-triangle-fill fs-5 text-danger me-2"></i>
+                <div class="flex-grow-1" th:text="${error}">Error message</div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div th:if="${info}" class="alert alert-info alert-dismissible fade show shadow-sm border-0 d-flex align-items-center mb-4" role="alert" style="border-left: 4px solid #0ea5e9 !important;">
+                <i class="bi bi-info-circle-fill fs-5 text-info me-2"></i>
+                <div class="flex-grow-1" th:text="${info}">Info message</div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+            <!-- Toast Container -->
+            <div aria-live="polite" aria-atomic="true" class="position-relative">
+                <div class="toast-container position-fixed top-0 end-0 p-3" id="toastContainer"></div>
+            </div>
+            <div layout:fragment="content"></div>
+        </div>
+    </div>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/jquery.dataTables.min.js"></script>
+    <script src="/js/dataTables.bootstrap5.min.js"></script>
+    <script src="/js/app.js?v=7"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPath = window.location.pathname;
+            document.querySelectorAll('.sidebar .nav-link').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === currentPath || (href !== '/' && currentPath.startsWith(href))) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+    <div layout:fragment="scripts"></div>
+</body>
+</html>

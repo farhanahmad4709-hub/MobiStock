@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+    <title>Edit Phone - MobiStock</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1 class="h3 mb-0 text-gray-800">Edit Phone</h1>
+        </div>
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <form th:action="@{/phones/edit/{id}(id=${phone.id})}" method="post">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">IMEI/Serial Number *</label>
+                            <input type="text" class="form-control" name="imei" th:value="${phone.imei}" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Brand *</label>
+                            <select class="form-select select2-tags mb-2" id="brandSelect" name="brand" required>
+                                <option value="">Select or type new...</option>
+                                <option th:each="b : ${distinctBrands}" th:value="${b}" th:text="${b}" th:selected="${b == phone.brand}"></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Model *</label>
+                            <select class="form-select select2-tags mb-2" id="modelSelect" name="model" required>
+                                <option value="">Select or type new...</option>
+                                <option th:if="${phone.model != null}" th:value="${phone.model}" th:text="${phone.model}" selected></option>
+                                <option th:each="m : ${distinctModels}" th:value="${m}" th:text="${m}" th:selected="${m == phone.model}"></option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">RAM/Storage</label>
+                            <select class="form-select select2-tags mb-2" id="storageSelect" name="storageRam">
+                                <option value="">Select or type new...</option>
+                                <option th:each="s : ${distinctStorageRam}" th:value="${s}" th:text="${s}" th:selected="${s == phone.storageRam}"></option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Color</label>
+                            <select class="form-select select2-tags mb-2" id="colorSelect" name="color">
+                                <option value="">Select or type new...</option>
+                                <option th:each="c : ${distinctColors}" th:value="${c}" th:text="${c}" th:selected="${c == phone.color}"></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <label class="form-label d-block">Condition *</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="condition" id="condPacked" value="PACKED" th:checked="${phone.condition != null and phone.condition.name() == 'PACKED'}" required>
+                                <label class="form-check-label" for="condPacked"><i class="bi bi-box-seam me-1 text-success"></i> Packed</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="condition" id="condUsed" value="USED" th:checked="${phone.condition != null and phone.condition.name() == 'USED'}" required>
+                                <label class="form-check-label" for="condUsed"><i class="bi bi-phone me-1 text-warning"></i> Used</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notes Section (Available for both Packed and Used) -->
+                    <div class="row mb-3" id="notesDiv">
+                        <div class="col-md-6 mb-2">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-receipt text-primary me-1"></i> Receipt / Condition Notes
+                                <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">Printed on Receipt</span>
+                            </label>
+                            <textarea class="form-control" name="conditionNotes" rows="2" placeholder="e.g. 1-Year Warranty, PTA Approved, Condition 9/10" th:text="${phone.conditionNotes}"></textarea>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-shield-lock text-danger me-1"></i> Internal Notes
+                                <span class="badge bg-danger-subtle text-danger border border-danger-subtle ms-1">Private (Staff Only)</span>
+                            </label>
+                            <textarea class="form-control" name="internalNotes" rows="2" placeholder="e.g. Supplier info, repair notes, cost details" th:text="${phone.internalNotes}"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label class="form-label">Cost Price *</label>
+                            <div class="input-group">
+                                <span class="input-group-text">PKR</span>
+                                <input type="number" step="0.01" class="form-control" id="costPrice" name="costPrice" th:value="${phone.costPrice}" required oninput="calculateProfit()">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Selling Price *</label>
+                            <div class="input-group">
+                                <span class="input-group-text">PKR</span>
+                                <input type="number" step="0.01" class="form-control" id="sellingPrice" name="sellingPrice" th:value="${phone.sellingPrice}" required oninput="calculateProfit()">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Estimated Profit</label>
+                            <div class="form-control-plaintext text-success fw-bold" id="profitPreview">PKR 0.00</div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <a href="/phones" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

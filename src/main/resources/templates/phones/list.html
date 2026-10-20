@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+    <title>Phone Inventory - MobiStock</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1 class="h3 mb-0 text-gray-800">Phone Inventory</h1>
+            <a href="/phones/add" class="btn btn-success"><i class="bi bi-plus-circle"></i> Add Phone</a>
+        </div>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <form method="get" action="/phones">
+                    <!-- Row 1: Search Field (Full Width & Highlighted) -->
+                    <div class="mb-2">
+                        <div class="position-relative">
+                            <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+                            <input class="form-control form-control-highlight ps-5" type="search" placeholder="Search by IMEI, Brand, Model..." aria-label="Search" name="q" th:value="${searchQuery}">
+                        </div>
+                    </div>
+                    <!-- Row 2: Status, Condition, Filter, Reset -->
+                    <div class="d-flex flex-wrap align-items-center gap-2">
+                        <select class="form-select form-control-highlight w-auto" name="status">
+                            <option value="">All Status</option>
+                            <option value="IN_STOCK" th:selected="${selectedStatus == 'IN_STOCK'}">In Stock</option>
+                            <option value="SOLD" th:selected="${selectedStatus == 'SOLD'}">Sold</option>
+                            <option value="RETURNED" th:selected="${selectedStatus == 'RETURNED'}">Returned</option>
+                        </select>
+                        <select class="form-select form-control-highlight w-auto" name="condition">
+                            <option value="">All Condition</option>
+                            <option value="PACKED" th:selected="${selectedCondition == 'PACKED'}">Packed</option>
+                            <option value="USED" th:selected="${selectedCondition == 'USED'}">Used</option>
+                        </select>
+                        <button class="btn btn-primary px-3 shadow-sm" type="submit"><i class="bi bi-funnel me-1"></i> Filter</button>
+                        <a href="/phones" class="btn btn-outline-secondary" title="Reset filter"><i class="bi bi-arrow-clockwise me-1"></i> Reset</a>
+                    </div>
+                </form>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover datatable-paginated align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>IMEI</th>
+                                <th>Brand</th>
+                                <th>Model</th>
+                                <th>RAM/Storage</th>
+                                <th>Color</th>
+                                <th class="text-nowrap">Condition</th>
+                                <th>Cost</th>
+                                <th>Selling Price</th>
+                                <th>Status</th>
+                                <th class="text-nowrap text-center" style="min-width: 150px; width: 150px;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="phone : ${phones}">
+                                <td>
+                                    <span class="copy-imei-btn fw-bold font-monospace text-dark" 
+                                          th:data-imei="${phone.imei}" 
+                                          title="Click to copy IMEI">
+                                        <span th:text="${phone.imei}">123456789</span>
+                                        <i class="bi bi-copy text-muted copy-icon ms-1"></i>
+                                    </span>
+                                </td>
+                                <td th:text="${phone.brand}">Brand</td>
+                                <td th:text="${phone.model}">Model</td>
+                                <td th:text="${phone.storageRam}">128GB/6GB</td>
+                                <td th:text="${phone.color}">Black</td>
+                                <td class="text-nowrap">
+                                    <span class="badge" th:classappend="${phone.condition == 'PACKED'} ? 'badge-soft-success' : 'badge-soft-warning'" th:text="${phone.condition}">PACKED</span>
+                                    <i class="bi bi-journal-text text-primary ms-1 align-middle" th:if="${(phone.conditionNotes != null and !phone.conditionNotes.isEmpty()) or (phone.internalNotes != null and !phone.internalNotes.isEmpty())}" title="Has notes"></i>
+                                </td>
+                                <td th:text="${'PKR ' + (phone.costPrice != null ? #numbers.formatDecimal(phone.costPrice, 1, 'COMMA', 2, 'POINT') : '0.00')}">PKR 0.00</td>
+                                <td th:text="${'PKR ' + (phone.sellingPrice != null ? #numbers.formatDecimal(phone.sellingPrice, 1, 'COMMA', 2, 'POINT') : '0.00')}">PKR 0.00</td>
+                                <td>
+                                    <span class="badge" 
+                                          th:classappend="${phone.status == 'IN_STOCK'} ? 'badge-soft-success' : (${phone.status == 'SOLD'} ? 'bg-light text-muted border' : 'badge-soft-warning')" 
+                                          th:text="${phone.status}">IN_STOCK</span>
+                                </td>
+                                <td class="text-nowrap text-center align-middle" style="min-width: 150px;">
+                                    <div class="btn-group btn-group-sm">
+                                        <button type="button" 
+                                                class="btn btn-outline-secondary view-notes-btn" 
+                                                th:classappend="${(phone.conditionNotes != null and !phone.conditionNotes.isEmpty()) or (phone.internalNotes != null and !phone.internalNotes.isEmpty())} ? 'btn-outline-info text-info' : ''"
+                                                th:data-phone-name="${phone.brand + ' ' + phone.model}"
+                                                th:data-imei="${phone.imei}"
+                                                th:data-condition="${phone.condition}"
+                                                th:data-receipt-notes="${phone.conditionNotes != null ? phone.conditionNotes : ''}"
+                                                th:data-internal-notes="${phone.internalNotes != null ? phone.internalNotes : ''}"
+                                                th:data-edit-url="@{/phones/edit/{id}(id=${phone.id})}"
+                                                title="View Notes">
+                                            <i class="bi bi-journal-text"></i>
+                                        </button>
+                                        <a th:href="@{/phones/edit/{id}(id=${phone.id})}" class="btn btn-outline-primary" title="Edit"><i class="bi bi-pencil"></i></a>
+                                        <a th:if="${phone.status.name() == 'SOLD'}" th:href="@{/sales(q=${phone.imei}, fromDate='2020-01-01')}" class="btn btn-outline-info" title="View Sale"><i class="bi bi-receipt"></i></a>
+                                        <form th:action="@{/phones/delete/{id}(id=${phone.id})}" method="post" class="d-inline">
+                                            <button type="submit" class="btn btn-outline-danger" title="Delete" onclick="return confirm('Are you sure you want to delete this phone?');"><i class="bi bi-trash"></i></button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phone Notes Modal -->
+        <div class="modal fade" id="phoneNotesModal" tabindex="-1" aria-labelledby="phoneNotesModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content shadow">
+                    <div class="modal-header bg-light">
+                        <div>
+                            <h5 class="modal-title fw-bold" id="phoneNotesModalLabel">Phone Notes</h5>
+                            <small class="text-muted" id="modalPhoneSubtitle"></small>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <!-- Receipt Notes (Public) -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <label class="fw-bold mb-0">
+                                    <i class="bi bi-receipt text-primary me-1"></i> Receipt / Condition Notes
+                                </label>
+                                <span class="badge bg-primary">Printed on Receipt</span>
+                            </div>
+                            <div class="p-3 bg-light rounded border" id="modalReceiptNotes" style="white-space: pre-wrap; font-size: 0.95rem;">
+                                No receipt notes entered.
+                            </div>
+                        </div>
+
+                        <!-- Internal Notes (Private) -->
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <label class="fw-bold mb-0">
+                                    <i class="bi bi-shield-lock text-danger me-1"></i> Internal Notes
+                                </label>
+                                <span class="badge bg-danger">Private (Admin &amp; Seller Only)</span>
+                            </div>
+                            <div class="p-3 bg-light rounded border border-danger-subtle" id="modalInternalNotes" style="white-space: pre-wrap; font-size: 0.95rem;">
+                                No internal notes entered.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer bg-light">
+                        <a href="#" id="modalEditLink" class="btn btn-primary"><i class="bi bi-pencil me-1"></i> Edit Notes</a>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

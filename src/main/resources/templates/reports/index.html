@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<body>
+<div layout:fragment="content">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="h3 mb-0 text-gray-800">Financial & Sales Reports</h2>
+        <div class="d-flex gap-2">
+            <a th:href="@{/reports/export(from=${from}, to=${to})}" class="btn btn-outline-success" title="Download standard CSV (0 parse warnings)">
+                <i class="bi bi-file-earmark-spreadsheet me-1"></i> Export CSV
+            </a>
+            <a th:href="@{/reports/export-excel(from=${from}, to=${to})}" class="btn btn-success" title="Download formatted Excel Workbook">
+                <i class="bi bi-file-earmark-excel-fill me-1"></i> Export Excel
+            </a>
+        </div>
+    </div>
+
+    <!-- Filter Form -->
+    <form th:action="@{/reports/filter}" method="get" class="card shadow-sm mb-4">
+        <div class="card-body py-3">
+            <div class="row g-3 align-items-end">
+                <div class="col-md-4">
+                    <label for="from" class="form-label fw-bold small text-muted mb-1">From Date</label>
+                    <input type="date" class="form-control form-control-highlight" id="from" name="from" th:value="${from}">
+                </div>
+                <div class="col-md-4">
+                    <label for="to" class="form-label fw-bold small text-muted mb-1">To Date</label>
+                    <input type="date" class="form-control form-control-highlight" id="to" name="to" th:value="${to}">
+                </div>
+                <div class="col-md-4 d-flex gap-2">
+                    <button type="submit" class="btn btn-primary px-4"><i class="bi bi-funnel me-1"></i> Filter</button>
+                    <a th:href="@{/reports}" class="btn btn-outline-secondary" title="Reset to current month"><i class="bi bi-arrow-clockwise"></i> Reset</a>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- KPI Metric Cards -->
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card bg-light shadow-sm border-0 border-start border-primary border-4">
+                <div class="card-body">
+                    <h6 class="card-title text-muted text-uppercase small fw-bold">Total Sales (Revenue)</h6>
+                    <h3 class="mb-0 d-flex align-items-center">
+                        <span class="masked-val">**********</span>
+                        <span class="real-val d-none text-dark fw-bold" th:text="${'PKR ' + (totalSales != null ? #numbers.formatDecimal(totalSales, 1, 'COMMA', 2, 'POINT') : '0.00')}">PKR 0.00</span>
+                        <button type="button" class="btn btn-sm btn-link text-muted p-0 ms-2 mask-toggle-btn" title="Show data" style="font-size: 1.1rem; line-height: 1; border: none; background: none;">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-light shadow-sm border-0 border-start border-success border-4">
+                <div class="card-body">
+                    <h6 class="card-title text-muted text-uppercase small fw-bold">Total Net Profit</h6>
+                    <h3 class="mb-0 d-flex align-items-center">
+                        <span class="masked-val">**********</span>
+                        <span class="real-val d-none text-success fw-bold" th:text="${'PKR ' + (totalProfit != null ? #numbers.formatDecimal(totalProfit, 1, 'COMMA', 2, 'POINT') : '0.00')}">PKR 0.00</span>
+                        <button type="button" class="btn btn-sm btn-link text-muted p-0 ms-2 mask-toggle-btn" title="Show data" style="font-size: 1.1rem; line-height: 1; border: none; background: none;">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-light shadow-sm border-0 border-start border-info border-4">
+                <div class="card-body">
+                    <h6 class="card-title text-muted text-uppercase small fw-bold">Completed Transactions</h6>
+                    <h3 class="mb-0 d-flex align-items-center">
+                        <span class="masked-val">**********</span>
+                        <span class="real-val d-none text-dark fw-bold" th:text="${salesCount}">0</span>
+                        <button type="button" class="btn btn-sm btn-link text-muted p-0 ms-2 mask-toggle-btn" title="Show data" style="font-size: 1.1rem; line-height: 1; border: none; background: none;">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Graphical Visualizations & Tables -->
+    <div class="row">
+        <!-- Sales by Day Card -->
+        <div class="col-lg-6 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+                    <h5 class="m-0 font-weight-bold text-primary"><i class="bi bi-graph-up me-2"></i>Sales by Day</h5>
+                    <ul class="nav nav-pills card-header-pills" id="salesDayTabs" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active py-1 px-3 small" id="chart-tab" data-bs-toggle="tab" data-bs-target="#salesChartPane" type="button"><i class="bi bi-bar-chart-fill me-1"></i>Graph</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link py-1 px-3 small" id="table-tab" data-bs-toggle="tab" data-bs-target="#salesTablePane" type="button"><i class="bi bi-table me-1"></i>Table</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content" id="salesDayTabContent">
+                        <!-- Graph Pane -->
+                        <div class="tab-pane fade show active" id="salesChartPane" role="tabpanel">
+                            <div style="position: relative; height: 260px; width: 100%;">
+                                <canvas id="salesByDayChart"></canvas>
+                            </div>
+                        </div>
+                        <!-- Table Pane -->
+                        <div class="tab-pane fade" id="salesTablePane" role="tabpanel">
+                            <div class="table-responsive" style="max-height: 260px; overflow-y: auto;">
+                                <table class="table table-striped table-hover mb-0">
+                                    <thead class="table-light sticky-top">
+                                        <tr>
+                                            <th>Date</th>
+                                            <th class="text-end">Sales Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="stat : ${salesByDay}">
+                                            <td th:text="${stat.date}">-</td>
+                                            <td class="text-end fw-semibold" th:text="${'PKR ' + (stat.sales != null ? #numbers.formatDecimal(stat.sales, 1, 'COMMA', 2, 'POINT') : '0.00')}">-</td>
+                                        </tr>
+                                        <tr th:if="${#lists.isEmpty(salesByDay)}">
+                                            <td colspan="2" class="text-center text-muted py-3">No sales recorded during this period</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Selling Products Card -->
+        <div class="col-lg-6 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+                    <h5 class="m-0 font-weight-bold text-primary"><i class="bi bi-trophy me-2"></i>Top Selling Products</h5>
+                    <ul class="nav nav-pills card-header-pills" id="topProductsTabs" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active py-1 px-3 small" id="prod-chart-tab" data-bs-toggle="tab" data-bs-target="#prodChartPane" type="button"><i class="bi bi-pie-chart-fill me-1"></i>Graph</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link py-1 px-3 small" id="prod-table-tab" data-bs-toggle="tab" data-bs-target="#prodTablePane" type="button"><i class="bi bi-table me-1"></i>Table</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content" id="topProductsTabContent">
+                        <!-- Graph Pane -->
+                        <div class="tab-pane fade show active" id="prodChartPane" role="tabpanel">
+                            <div style="position: relative; height: 260px; width: 100%;">
+                                <canvas id="topSellingChart"></canvas>
+                            </div>
+                        </div>
+                        <!-- Table Pane -->
+                        <div class="tab-pane fade" id="prodTablePane" role="tabpanel">
+                            <div class="table-responsive" style="max-height: 260px; overflow-y: auto;">
+                                <table class="table table-striped table-hover mb-0">
+                                    <thead class="table-light sticky-top">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Product / Model</th>
+                                            <th class="text-end">Units Sold</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="item, iter : ${topSellingItems}">
+                                            <td th:text="${iter.count}">1</td>
+                                            <td th:text="${item.name}">-</td>
+                                            <td class="text-end fw-bold text-success" th:text="${item.quantity}">-</td>
+                                        </tr>
+                                        <tr th:if="${#lists.isEmpty(topSellingItems)}">
+                                            <td colspan="3" class="text-center text-muted py-3">No products sold during this period</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<th:block layout:fragment="scripts">
+    <script src="/js/chart.umd.min.js"></script>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        document.addEventListener('DOMContentLoaded', function () {
+            // Data from Thymeleaf backend
+            const rawSalesByDay = /*[[${salesByDay}]]*/ [];
+            const rawTopProducts = /*[[${topSellingItems}]]*/ [];
+
+            // 1. Sales by Day Chart (Chronological order)
+            if (rawSalesByDay && rawSalesByDay.length > 0) {
+                // Reverse to display from oldest to newest date on X-axis
+                const chronologicalData = [...rawSalesByDay].reverse();
+                const dayLabels = chronologicalData.map(d => d.date);
+                const daySales = chronologicalData.map(d => Number(d.sales || 0));
+
+                const ctxSales = document.getElementById('salesByDayChart').getContext('2d');
+                new Chart(ctxSales, {
+                    type: 'bar',
+                    data: {
+                        labels: dayLabels,
+                        datasets: [{
+                            label: 'Daily Sales (PKR)',
+                            data: daySales,
+                            backgroundColor: 'rgba(13, 110, 253, 0.65)',
+                            borderColor: 'rgb(13, 110, 253)',
+                            borderWidth: 1.5,
+                            borderRadius: 4,
+                            maxBarThickness: 45
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        let val = context.parsed.y || 0;
+                                        return ' Sales: PKR ' + val.toLocaleString('en-US', { minimumFractionDigits: 2 });
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(val) {
+                                        return (val >= 1000) ? (val / 1000).toLocaleString() + 'k' : val;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            } else {
+                const canvas = document.getElementById('salesByDayChart');
+                if (canvas && canvas.parentElement) {
+                    canvas.parentElement.innerHTML = '<div class="d-flex align-items-center justify-content-center h-100 text-muted"><i class="bi bi-info-circle me-2"></i>No daily sales data for this date range</div>';
+                }
+            }
+
+            // 2. Top Selling Products Chart (Horizontal Bar Chart)
+            if (rawTopProducts && rawTopProducts.length > 0) {
+                const prodLabels = rawTopProducts.map(p => p.name);
+                const prodQuantities = rawTopProducts.map(p => Number(p.quantity || 0));
+
+                const ctxProd = document.getElementById('topSellingChart').getContext('2d');
+                new Chart(ctxProd, {
+                    type: 'bar',
+                    data: {
+                        labels: prodLabels,
+                        datasets: [{
+                            label: 'Units Sold',
+                            data: prodQuantities,
+                            backgroundColor: [
+                                'rgba(25, 135, 84, 0.7)',
+                                'rgba(13, 202, 240, 0.7)',
+                                'rgba(255, 193, 7, 0.7)',
+                                'rgba(111, 66, 193, 0.7)',
+                                'rgba(253, 126, 20, 0.7)',
+                                'rgba(108, 117, 125, 0.7)'
+                            ],
+                            borderColor: [
+                                'rgb(25, 135, 84)',
+                                'rgb(13, 202, 240)',
+                                'rgb(255, 193, 7)',
+                                'rgb(111, 66, 193)',
+                                'rgb(253, 126, 20)',
+                                'rgb(108, 117, 125)'
+                            ],
+                            borderWidth: 1.5,
+                            borderRadius: 4
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return ' ' + context.parsed.x + ' units sold';
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                ticks: { stepSize: 1 }
+                            }
+                        }
+                    }
+                });
+            } else {
+                const canvas = document.getElementById('topSellingChart');
+                if (canvas && canvas.parentElement) {
+                    canvas.parentElement.innerHTML = '<div class="d-flex align-items-center justify-content-center h-100 text-muted"><i class="bi bi-info-circle me-2"></i>No product sales data for this date range</div>';
+                }
+            }
+        });
+        /*]]>*/
+    </script>
+</th:block>
+</body>
+</html>

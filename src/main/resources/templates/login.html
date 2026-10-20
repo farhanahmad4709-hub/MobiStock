@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - MobiStock</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="/css/style.css?v=11" rel="stylesheet">
+</head>
+<body class="login-bg d-flex align-items-center py-4 bg-body-tertiary">
+    <main class="form-signin w-100 m-auto" style="max-width: 400px;">
+        <div class="card shadow">
+            <div class="card-body p-4 text-center">
+                <i class="bi bi-phone text-primary" style="font-size: 3rem;"></i>
+                <h1 class="h3 mb-3 fw-normal">MobiStock</h1>
+                <div th:if="${param.error != null and #strings.contains(param.error, 'inactive')}" class="alert alert-warning">
+                    <i class="bi bi-shield-exclamation me-1"></i> Your account has been deactivated. Please contact an administrator.
+                </div>
+                <div th:if="${param.error != null and !#strings.contains(param.error, 'inactive')}" class="alert alert-danger">
+                    Invalid username or password.
+                </div>
+                <div th:if="${param.logout}" class="alert alert-success">
+                    You have been logged out.
+                </div>
+                <form th:action="@{/login}" method="post">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="name@example.com" required>
+                        <label for="username">Username</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="checkbox mb-3 text-start">
+                        <label>
+                            <input type="checkbox" name="remember-me" value="remember-me"> Remember me
+                        </label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

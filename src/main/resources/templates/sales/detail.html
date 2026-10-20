@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+    <title>Sale Detail - MobiStock</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <style>
+        @media print {
+            @page {
+                margin: 0;
+            }
+            .sidebar, .navbar, .btn, .no-print, form:not(#saleForm) {
+                display: none !important;
+            }
+            .content-wrapper {
+                margin-left: 0 !important;
+                padding: 0 !important;
+            }
+            .card {
+                border: none !important;
+                box-shadow: none !important;
+            }
+            html, body {
+                background-color: #fff !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            /* Standard A4 Invoice Mode - Centered Vertically on 297mm A4 Paper */
+            body:not(.print-thermal-mode) #thermalReceipt {
+                display: none !important;
+            }
+            body:not(.print-thermal-mode) {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            body:not(.print-thermal-mode) #invoiceCard {
+                display: block !important;
+                width: 100% !important;
+                margin: 0 auto !important;
+                padding-left: 15mm !important;
+                padding-right: 15mm !important;
+                border: none !important;
+                box-sizing: border-box !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+            body:not(.print-thermal-mode) #invoiceCard .card-body {
+                padding: 0 !important;
+                width: 100% !important;
+            }
+
+            /* Thermal / Small Receipt Mode - Centered Vertically on 101.6mm (4x4) Paper */
+            body.print-thermal-mode #invoiceCard {
+                display: none !important;
+            }
+            body.print-thermal-mode {
+                margin: 0 !important;
+                padding: 0 !important;
+                overflow: hidden !important;
+            }
+            body.print-thermal-mode #thermalReceipt {
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                height: 96mm !important;
+                min-height: 96mm !important;
+                width: 82mm !important;
+                max-width: 86mm !important;
+                margin: 0 auto !important;
+                padding: 0 !important;
+                box-sizing: border-box !important;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+                font-size: 10.5px !important;
+                color: #000 !important;
+                background: #fff !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+            body.print-thermal-mode #thermalReceipt > div {
+                flex-shrink: 0 !important;
+            }
+            body.print-thermal-mode #thermalReceipt * {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+        }
+        </style>
+        <div class="d-flex justify-content-between align-items-center mb-3 no-print">
+            <h1 class="h3 mb-0 text-gray-800">Sale Detail</h1>
+            <div>
+                <button type="button" class="btn btn-primary me-2" onclick="printStandard()"><i class="bi bi-printer"></i> Print Invoice</button>
+                <button type="button" class="btn btn-dark me-2" onclick="printThermal()"><i class="bi bi-receipt"></i> Print Receipt</button>
+                <a href="/sales" class="btn btn-secondary">Back to History</a>
+            </div>
+        </div>
+        
+        <!-- Standard A4 Invoice Card -->
+        <div class="card shadow mb-4" id="invoiceCard">
+            <div class="card-body p-4 p-md-5">
+                <!-- Invoice Header -->
+                <div class="row align-items-center mb-4 pb-3 border-bottom">
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center mb-1">
+                            <i class="bi bi-phone-fill text-primary fs-2 me-2"></i>
+                            <h2 class="mb-0 fw-bold text-gray-900">MobiStock</h2>
+                        </div>
+                        <div class="text-muted small">123 Tech Street, City, State, 12345</div>
+                        <div class="text-muted small">Phone: (123) 456-7890 | Email: info@mobistock.com</div>
+                    </div>
+                    <div class="col-sm-6 text-sm-end mt-3 mt-sm-0">
+                        <span class="badge bg-primary fs-6 px-3 py-2 mb-2">SALE INVOICE</span>
+                        <h4 class="text-gray-800 fw-bold mb-1" th:text="${sale.invoiceNumber}">INV-0000</h4>
+                        <div class="text-muted small">Date: <span class="fw-semibold text-dark" th:text="${#temporals.format(sale.createdAt, 'dd MMM yyyy, HH:mm')}"></span></div>
+                        <div class="text-muted small">Sold By: <span class="fw-semibold text-dark" th:text="${sale.soldBy != null ? sale.soldBy.fullName : 'System'}"></span></div>
+                    </div>
+                </div>
+
+                <!-- Customer Details Row -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="p-3 bg-light rounded border">
+                            <span class="text-uppercase text-muted fw-bold small">Customer Information:</span>
+                            <div class="d-flex flex-wrap gap-4 mt-1">
+                                <div>
+                                    <span class="text-muted small">Name:</span> 
+                                    <strong class="ms-1" th:text="${sale.customerName != null and !sale.customerName.isEmpty() and !sale.customerName.equalsIgnoreCase('NaN') ? sale.customerName : 'Walk-in Customer'}">Walk-in Customer</strong>
+                                </div>
+                                <div>
+                                    <span class="text-muted small">Phone:</span> 
+                                    <strong class="ms-1" th:text="${sale.customerPhone != null and !sale.customerPhone.isEmpty() and !sale.customerPhone.equalsIgnoreCase('NaN') ? sale.customerPhone : '-'}">-</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th style="width: 10%;">Type</th>
+                                <th style="width: 45%;">Item Details</th>
+                                <th style="width: 10%; text-align: center;">Qty</th>
+                                <th style="width: 17%; text-align: right;">Unit Price</th>
+                                <th style="width: 18%; text-align: right;">Subtotal</th>
+                                <th class="no-print" style="width: 10%; text-align: center;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="item : ${sale.items}">
+                                <td th:text="${item.itemType}">PHONE</td>
+                                <td>
+                                    <div class="fw-bold" th:text="${item.itemName + (item.itemIdentifier != null and !item.itemIdentifier.isEmpty() ? ' (' + item.itemIdentifier + ')' : '')}">Item Details</div>
+                                    <div class="small mt-1 p-2 rounded bg-light border-start border-3 border-primary" th:if="${item.phone != null and item.phone.conditionNotes != null and !item.phone.conditionNotes.isEmpty()}">
+                                        <div class="fw-semibold text-primary"><i class="bi bi-info-circle me-1"></i>Note:</div>
+                                        <div style="white-space: pre-line;" th:text="${item.phone.conditionNotes}"></div>
+                                    </div>
+                                </td>
+                                <td class="text-center fw-bold" th:text="${item.quantity}">1</td>
+                                <td class="text-end" th:text="${'PKR ' + (item.unitPrice != null ? #numbers.formatDecimal(item.unitPrice, 1, 'COMMA', 2, 'POINT') : '0.00')}">$0.00</td>
+                                <td class="text-end fw-bold" th:text="${'PKR ' + (item.subtotal != null ? #numbers.formatDecimal(item.subtotal, 1, 'COMMA', 2, 'POINT') : '0.00')}">$0.00</td>
+                                <td class="no-print text-center">
+                                    <form th:action="@{/sales/return-item/{saleId}/{itemId}(saleId=${sale.id}, itemId=${item.id})}" method="post" style="display:inline;">
+                                        <button type="submit" class="btn btn-sm btn-outline-danger" title="Return this item only" onclick="return confirm('Return this item to stock?');">
+                                            <i class="bi bi-arrow-counterclockwise"></i> Return
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-3 mb-lg-0">
+                        <div class="p-3 bg-light rounded border">
+                            <strong class="text-secondary small text-uppercase"><i class="bi bi-chat-left-quote me-1"></i>Notes / Message:</strong>
+                            <p class="text-dark mt-1 mb-0" style="white-space: pre-line;" th:text="${sale.notes != null and !sale.notes.isEmpty() ? sale.notes : 'Thank you for shopping with us! We appreciate your business.'}"></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-3 bg-light rounded border text-end">
+                            <span class="text-muted me-3 fs-5">Total Amount:</span>
+                            <span class="fw-bold fs-3 text-primary" th:text="${'PKR ' + (sale.totalAmount != null ? #numbers.formatDecimal(sale.totalAmount, 1, 'COMMA', 2, 'POINT') : '0.00')}">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thermal / ATM-Style Small Receipt (Hidden on screen, prints when clicking Print Receipt) -->
+        <div id="thermalReceipt" class="d-none">
+            <div style="text-align: center; border-bottom: 1px dashed #000; padding-bottom: 4px; margin-bottom: 4px;">
+                <h3 style="margin: 0; font-weight: bold; font-size: 16px; letter-spacing: 0.5px;">MobiStock</h3>
+                <div style="font-size: 10px; margin-top: 1px;">123 Tech Street, City</div>
+                <div style="font-size: 10px;">Phone: (123) 456-7890</div>
+            </div>
+
+            <div style="font-size: 10px; border-bottom: 1px dashed #000; padding-bottom: 4px; margin-bottom: 4px; line-height: 1.3;">
+                <div style="display: flex; justify-content: space-between;">
+                    <span><strong>Inv:</strong> <span th:text="${sale.invoiceNumber}"></span></span>
+                    <span th:text="${#temporals.format(sale.createdAt, 'dd/MM/yy HH:mm')}"></span>
+                </div>
+                <div><strong>Sold By:</strong> <span th:text="${sale.soldBy != null ? sale.soldBy.fullName : 'Admin'}"></span></div>
+                <div>
+                    <strong>Customer:</strong> <span th:text="${sale.customerName != null and !sale.customerName.isEmpty() and !sale.customerName.equalsIgnoreCase('NaN') ? sale.customerName : 'Walk-in Customer'}">Walk-in Customer</span>
+                    <span th:if="${sale.customerPhone != null and !sale.customerPhone.isEmpty() and !sale.customerPhone.equalsIgnoreCase('NaN') and sale.customerPhone != '-'}"> (<span th:text="${sale.customerPhone}"></span>)</span>
+                </div>
+            </div>
+
+            <div style="border-bottom: 1px dashed #000; padding-bottom: 4px; margin-bottom: 4px;">
+                <table style="width: 100%; font-size: 10.5px; border-collapse: collapse;">
+                    <thead>
+                        <tr style="border-bottom: 1px dashed #000;">
+                            <th style="text-align: left; padding: 2px 0; width: 52%;">Item</th>
+                            <th style="text-align: center; padding: 2px 0; width: 16%;">Qty</th>
+                            <th style="text-align: right; padding: 2px 0; width: 32%;">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="item : ${sale.items}" style="vertical-align: top; border-bottom: 1px dotted #ccc;">
+                            <td style="text-align: left; padding: 2px 2px 2px 0;">
+                                <div style="font-weight: bold;" th:text="${item.itemName}"></div>
+                                <div style="font-size: 9.5px; color: #444;" th:if="${item.itemIdentifier != null and !item.itemIdentifier.isEmpty()}" th:text="'IMEI: ' + ${item.itemIdentifier}"></div>
+                                <div style="font-size: 9.5px; line-height: 1.25; white-space: pre-line; color: #222; margin-top: 1px;" th:if="${item.phone != null and item.phone.conditionNotes != null and !item.phone.conditionNotes.isEmpty()}">
+                                    <span style="font-weight: 600;">Note:</span>
+                                    <span th:text="${item.phone.conditionNotes}"></span>
+                                </div>
+                            </td>
+                            <td style="text-align: center; padding: 2px; font-weight: bold; white-space: nowrap;" th:text="'x' + ${item.quantity}">x1</td>
+                            <td style="text-align: right; padding: 2px 0 2px 2px; font-weight: bold; white-space: nowrap;" th:text="${'PKR ' + (item.subtotal != null ? #numbers.formatDecimal(item.subtotal, 1, 'COMMA', 2, 'POINT') : '0.00')}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="border-bottom: 1px dashed #000; padding-bottom: 4px; margin-bottom: 4px;">
+                <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 12px;">
+                    <span>TOTAL:</span>
+                    <span th:text="${'PKR ' + (sale.totalAmount != null ? #numbers.formatDecimal(sale.totalAmount, 1, 'COMMA', 2, 'POINT') : '0.00')}"></span>
+                </div>
+            </div>
+
+            <div style="text-align: center; font-size: 10px; margin-top: 4px; line-height: 1.25; white-space: pre-line;" th:text="${sale.notes != null and !sale.notes.isEmpty() ? sale.notes : 'Thank you for shopping with us!&#10;We appreciate your business.'}">
+            </div>
+            <div style="text-align: center; font-size: 8.5px; color: #666; margin-top: 3px;">
+                *** Powered by MobiStock ***
+            </div>
+        </div>
+
+        <script>
+            function printStandard() {
+                document.body.classList.remove('print-thermal-mode');
+                
+                const invoiceCard = document.getElementById('invoiceCard');
+                if (invoiceCard) {
+                    invoiceCard.style.paddingTop = '0px';
+                    const cardHeight = invoiceCard.offsetHeight;
+                    const targetHeight = 1040;
+                    if (cardHeight < targetHeight) {
+                        const topGap = Math.max(30, Math.floor((targetHeight - cardHeight) / 2));
+                        invoiceCard.style.paddingTop = topGap + 'px';
+                    } else {
+                        invoiceCard.style.paddingTop = '30px';
+                    }
+                }
+                
+                window.print();
+            }
+
+            function printThermal() {
+                document.body.classList.add('print-thermal-mode');
+                
+                const receipt = document.getElementById('thermalReceipt');
+                if (receipt) {
+                    receipt.style.paddingTop = '0px';
+                    const receiptHeight = receipt.offsetHeight;
+                    const targetHeight = 360;
+                    if (receiptHeight < targetHeight) {
+                        const topGap = Math.max(8, Math.floor((targetHeight - receiptHeight) / 2));
+                        receipt.style.paddingTop = topGap + 'px';
+                    } else {
+                        receipt.style.paddingTop = '8px';
+                    }
+                }
+                
+                window.print();
+            }
+
+            window.addEventListener('afterprint', function() {
+                document.body.classList.remove('print-thermal-mode');
+                const invoiceCard = document.getElementById('invoiceCard');
+                if (invoiceCard) invoiceCard.style.paddingTop = '';
+                const receipt = document.getElementById('thermalReceipt');
+                if (receipt) receipt.style.paddingTop = '';
+            });
+        </script>
+    </div>
+</body>
+</html>
