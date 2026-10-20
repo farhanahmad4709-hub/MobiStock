@@ -100,16 +100,18 @@ REM -----------------------------------------------------------------------
 REM 3. Check for Packaged Application JAR
 REM -----------------------------------------------------------------------
 echo [3/4] Checking MobiStock application package...
-if not exist "target\mobistock-1.0.0.jar" (
-    echo       Application package target\mobistock-1.0.0.jar not found.
-    echo       Building package with Maven (this only takes a moment)...
-    call mvnw.cmd package -DskipTests
-    if !errorlevel! neq 0 (
-        echo [ERROR] Build failed. Please inspect errors above.
-        pause
-        exit /b 1
-    )
+if exist "target\mobistock-1.0.0.jar" goto :jar_ready
+
+echo       Application package target\mobistock-1.0.0.jar not found.
+echo       Building package with Maven, please wait...
+call mvnw.cmd package -DskipTests
+if %errorlevel% neq 0 (
+    echo [ERROR] Build failed. Please inspect errors above.
+    pause
+    exit /b 1
 )
+
+:jar_ready
 echo       MobiStock package is ready.
 echo.
 
